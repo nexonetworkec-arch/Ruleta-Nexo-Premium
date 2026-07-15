@@ -1,0 +1,18 @@
+{
+  "name": "Ruleta Nexo Premium",
+  "description": "Ruleta Nexo Premium",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "permissions": [
+    "android.permission.INTERNET",
+    "android.permission.WRITE_EXTERNAL_STORAGE",
+    "android.permission.READ_EXTERNAL_STORAGE",
+    "android.permission.READ_MEDIA_IMAGES",
+    "android.permission.READ_MEDIA_VIDEO"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

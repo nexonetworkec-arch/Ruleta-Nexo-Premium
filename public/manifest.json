@@ -1,0 +1,25 @@
+
+{
+  "name": "Ruleta Nexo Premium",
+  "short_name": "Ruleta Nexo",
+  "description": "Sistema Premium de Sorteos Corporativos",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#0a0a0a",
+  "theme_color": "#06b6d4",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

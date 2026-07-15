@@ -1,0 +1,2666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <!-- Primary SEO Metadata -->
+    <title>Ruleta Nexo Premium - Sistema de Sorteos y Gamificación para Negocios</title>
+    <meta name="description" content="Ruleta Nexo Premium es la herramienta definitiva de marketing promocional, sorteos interactivos y gamificación de leads para tu negocio. Totalmente responsivo, compatible con APK nativo y preparado para operar 100% offline.">
+    <meta name="keywords" content="ruleta nexo, ruleta de premios, sorteo online, marketing interactivo, captacion de leads, ruleta premium, marketing promocional, sorteos para negocios, ruleta de la fortuna, software offline de sorteos">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Ruleta Nexo Premium">
+    <link rel="canonical" href="https://ais-pre-ohdr4xzxupquyq6g5u6xdt-328810327831.us-east1.run.app">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ais-pre-ohdr4xzxupquyq6g5u6xdt-328810327831.us-east1.run.app">
+    <meta property="og:title" content="Ruleta Nexo Premium - Sorteos y Gamificación Interactiva">
+    <meta property="og:description" content="Potencia la captación de clientes de tu negocio con sorteos dinámicos en tiempo real. Configuración intuitiva, soporte de temas personalizados, analíticas avanzadas y compatibilidad offline permanente.">
+    <meta property="og:image" content="https://ais-pre-ohdr4xzxupquyq6g5u6xdt-328810327831.us-east1.run.app/icon.png">
+    <meta property="og:image:alt" content="Ruleta Nexo Premium Logo Oficial">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ais-pre-ohdr4xzxupquyq6g5u6xdt-328810327831.us-east1.run.app">
+    <meta name="twitter:title" content="Ruleta Nexo Premium - Sorteos y Gamificación">
+    <meta name="twitter:description" content="Potencia la captación de clientes de tu negocio con sorteos dinámicos en tiempo real. Configuración intuitiva, soporte de temas personalizados, analíticas avanzadas y compatibilidad offline permanente.">
+    <meta name="twitter:image" content="https://ais-pre-ohdr4xzxupquyq6g5u6xdt-328810327831.us-east1.run.app/icon.png">
+
+    <!-- Structured Data for Search Engine Optimization (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Ruleta Nexo Premium",
+      "operatingSystem": "Android, iOS, Windows, macOS, Linux, Web",
+      "applicationCategory": "BusinessApplication, MarketingApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "La solución líder de sorteos, ruletas de la fortuna promocionales y captura de leads gamificada en tiempo real para centros comerciales, tiendas, restaurantes y eventos corporativos con soporte offline nativo.",
+      "featureList": "Diseño premium personalizable, sistema de licencias criptográficas deterministas, panel de súper administración, exportación/importación offline de base de datos, carrusel de banners publicitarios interactivos, modo ruleta de sorteo y registro completo de leads compatible con Supabase y modo Standalone.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "142"
+      }
+    }
+    </script>
+    
+    <!-- PWA & Mobile Optimization -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon.png">
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <script>
+        (function() {
+            try {
+                var params = new URLSearchParams(window.location.search);
+                var isAuth = sessionStorage.getItem('nexo_auth_active') === 'true' || 
+                             params.has('join') || 
+                             params.has('embed') || 
+                             params.has('live');
+                if (isAuth) {
+                    document.documentElement.classList.add('nexo-skip-login');
+                }
+            } catch(e) {}
+        })();
+    </script>
+
+    <style>
+        .nexo-skip-login #loginScreen {
+            display: none !important;
+        }
+        .nexo-skip-login .app-container {
+            display: flex !important;
+        }
+        :root { 
+            --bg-color: #0a0a0a;
+            --card-bg: #161616; 
+            --gold: #06b6d4; 
+            --gold-secondary: #0f172a;
+            --white: #ffffff; 
+            --danger: #ff4d4d; 
+            --gray: #222;
+            --tab-inactive: #888;
+            --success: #00c853;
+            --warning: #ffab00;
+        }
+        
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none; }
+        
+        html, body {
+            overflow: hidden;
+            height: 100%;
+            height: 100dvh;
+            margin: 0;
+            width: 100%;
+        }
+        
+        body { 
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle, #1a1a1a 1px, transparent 1px), radial-gradient(circle, #1a1a1a 1px, transparent 1px);
+            background-size: 40px 40px; background-position: 0 0, 20px 20px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            color: var(--white); font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            display: flex; align-items: center; justify-content: center;
+            transition: background 0.5s ease;
+        }
+        
+        #loginScreen { 
+            position: fixed; inset: 0; background: rgba(0,0,0,0.97); 
+            z-index: 99999; display: flex; justify-content: center; align-items: flex-start; backdrop-filter: blur(20px);
+            overflow-y: auto; padding: 20px 10px;
+        }
+        
+        .login-card { 
+            background: var(--card-bg); padding: 45px 35px; border-radius: 40px; border: 1px solid #333; 
+            width: 95%; max-width: 420px; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,0.9);
+            margin: auto;
+        }
+
+        .input-group { position: relative; width: 100%; margin-bottom: 20px; text-align: left; }
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            cursor: pointer;
+            color: var(--gold);
+            font-size: 0.6rem;
+            font-weight: 900;
+            user-select: none;
+            z-index: 10;
+            background: rgba(0,0,0,0.6);
+            padding: 6px 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+            border: 1px solid rgba(212,175,55,0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .password-toggle:hover { color: #000; background: var(--gold); }
+        .input-group label { display: block; font-size: 0.7rem; color: var(--gold); margin-bottom: 8px; margin-left: 12px; font-weight: 800; text-transform: uppercase; }
+        .input-pin { width: 100%; padding: 18px; padding-right: 80px; background: #000; border: 1px solid #333; color: var(--gold); border-radius: 18px; font-size: 1.1rem; transition: 0.3s; }
+        .input-pin:focus { border-color: var(--gold); box-shadow: 0 0 20px rgba(212,175,55,0.15); }
+
+        .app-container { 
+            display: none; 
+            position: relative; 
+            width: 100vw; 
+            height: 100vh; 
+            height: 100dvh; 
+            overflow: hidden;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            padding: env(safe-area-inset-top, 10px) env(safe-area-inset-right, 10px) env(safe-area-inset-bottom, 10px) env(safe-area-inset-left, 10px); 
+            
+            /* Sizing variables for the wheel */
+            --wheel-size: min(85vw, 75dvh);
+            --wheel-max-size: calc(100dvh - 120px);
+        }
+
+        /* Banner ad active adjustments */
+        .app-container.banner-ad-active {
+            --wheel-size: min(85vw, 65dvh);
+            --wheel-max-size: calc(100dvh - 180px);
+        }
+        .app-container.banner-ad-active .title-area,
+        .app-container.side-ad-active .title-area {
+            flex: 0 1 auto !important;
+            padding: 10px !important;
+        }
+        .app-container.banner-ad-active #mainSubtitle,
+        .app-container.side-ad-active #mainSubtitle {
+            margin-top: 5px !important;
+        }
+
+        /* Side ad active adjustments (large screen split layout) */
+        .app-container.side-ad-active {
+            --wheel-size: min(48vw, 82dvh);
+            --wheel-max-size: calc(100dvh - 100px);
+        }
+        
+        /* Both banner and side ad active */
+        .app-container.banner-ad-active.side-ad-active {
+            --wheel-size: min(46vw, 72dvh);
+            --wheel-max-size: calc(100dvh - 160px);
+        }
+
+        @media (max-width: 580px) {
+            .app-container.side-ad-active {
+                --wheel-size: min(85vw, 45dvh);
+                --wheel-max-size: calc(100dvh - 250px);
+            }
+            .app-container.banner-ad-active.side-ad-active {
+                --wheel-size: min(80vw, 38dvh);
+                --wheel-max-size: calc(100dvh - 280px);
+            }
+        }
+        
+        #btnOpenMenu {
+            position: fixed;
+            bottom: max(30px, env(safe-area-inset-bottom, 30px));
+            right: max(30px, env(safe-area-inset-right, 30px));
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212,175,55, 0.3);
+            color: var(--gold);
+            padding: 12px 24px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            cursor: pointer;
+            z-index: 500;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        #btnOpenMenu:hover {
+            background: var(--gold);
+            color: #000;
+            transform: scale(1.08);
+            border-color: var(--gold);
+        }
+
+        .wheel-section { 
+            flex: 1; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            z-index: 10; 
+            width: 100%; 
+            height: 100%;
+            transition: justify-content 0.6s ease;
+            padding-bottom: 85px; /* Evita solapamiento con botones Menú/Pantalla Completa */
+        }
+
+        .title-area {
+            flex: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            transition: flex 0.6s ease;
+        }
+
+        #mainTitle { 
+            width: 100%;
+            max-width: 95vw;
+            padding: 0 10px;
+            margin: 0;
+            color: var(--gold);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 20;
+            line-height: 1.1;
+            transition: none;
+            display: block;
+        }
+
+        #mainSubtitle {
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-top: 10px;
+            margin-bottom: 0;
+            width: 100%;
+            max-width: 90vw;
+            z-index: 20;
+        }
+        
+        .wheel-wrapper { 
+            position: relative; 
+            width: var(--wheel-size); 
+            height: var(--wheel-size); 
+            max-width: var(--wheel-max-size); 
+            max-height: var(--wheel-max-size); 
+            aspect-ratio: 1 / 1;
+            filter: drop-shadow(0 0 60px rgba(0,0,0,0.8)); 
+            margin: 0 auto;
+            transition: 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        #wheelCanvas { 
+            position: absolute;
+            inset: 0;
+            width: 100%; 
+            height: 100%; 
+            border-radius: 50%; 
+            border: 8px solid #1c1e22; 
+            background: transparent; 
+            box-shadow: 0 25px 60px rgba(0,0,0,0.9), 0 0 35px rgba(255, 255, 255, 0.05); 
+            box-sizing: border-box;
+        }
+        #pointer { 
+            position: absolute; 
+            top: -18px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            width: 38px; 
+            height: 48px; 
+            z-index: 50; 
+            background: linear-gradient(135deg, #ffffff 0%, var(--gold) 45%, var(--gold-secondary) 100%);
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
+            filter: drop-shadow(0 8px 12px rgba(0,0,0,0.85)) drop-shadow(0 0 8px rgba(6, 182, 212, 0.2));
+            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+        }
+        #centerLogo { 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            width: 20%; 
+            height: 20%; 
+            min-width: 65px; 
+            min-height: 65px; 
+            border-radius: 50%; 
+            background: #000; 
+            z-index: 100; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border: 4px solid #1c1e22; 
+            overflow: hidden; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.9), inset 0 2px 6px rgba(255,255,255,0.2);
+        }
+
+        #btnSpinCenter { 
+            width: 100%; 
+            height: 100%; 
+            border: 2px solid var(--gold); 
+            border-radius: 50%; 
+            background: radial-gradient(circle, #2a2e35 0%, #121417 75%, #050607 100%); 
+            color: #ffffff; 
+            font-weight: 900; 
+            cursor: pointer; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            box-shadow: 0 6px 0 rgba(0,0,0,0.6), inset 0 0 10px rgba(212,175,55,0.4); 
+            transition: all 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            text-transform: uppercase; 
+            font-size: 0.95rem; 
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.9);
+            background-size: cover !important; 
+            background-repeat: no-repeat !important; 
+            background-position: center !important; 
+        }
+        #btnSpinCenter:hover {
+            filter: brightness(1.1) contrast(1.05);
+        }
+        #btnSpinCenter:active { 
+            transform: translateY(3px); 
+            box-shadow: 0 3px 0 rgba(0,0,0,0.6); 
+        }
+
+        @keyframes spin-btn-pulse {
+            0% { transform: scale(1); box-shadow: 0 0 8px var(--gold), 0 0 15px rgba(212, 175, 55, 0.3), inset 0 0 8px rgba(255,255,255,0.2); }
+            50% { transform: scale(1.1); box-shadow: 0 0 25px var(--gold), 0 0 45px rgba(212, 175, 55, 0.7), inset 0 0 15px rgba(255,255,255,0.4); }
+            100% { transform: scale(1); box-shadow: 0 0 8px var(--gold), 0 0 15px rgba(212, 175, 55, 0.3), inset 0 0 8px rgba(255,255,255,0.2); }
+        }
+        .btn-spin-pulse-active {
+            animation: spin-btn-pulse 1.6s infinite ease-in-out !important;
+            color: #000 !important;
+        }
+
+        .btn-spin-disabled {
+            background: radial-gradient(circle, #2d3139 0%, #1a1c23 100%) !important;
+            color: #ef4444 !important;
+            cursor: not-allowed !important;
+            box-shadow: none !important;
+            pointer-events: none !important;
+            text-shadow: none !important;
+            transform: none !important;
+            border-color: #ef4444 !important;
+        }
+
+        button, .btn { padding: 18px; border: none; border-radius: 18px; font-weight: 800; cursor: pointer; text-transform: uppercase; font-size: 0.75rem; transition: all 0.15s ease-in-out; }
+        button:disabled, .btn:disabled { opacity: 0.35; cursor: not-allowed !important; pointer-events: none !important; }
+        button:active:not(:disabled), .btn:active:not(:disabled) { transform: scale(0.95); }
+        .btn-primary { background: linear-gradient(135deg, var(--gold), var(--gold-secondary)); color: #000; }
+        .btn-secondary { background: #1a1a1a; color: #fff; border: 1px solid #333; }
+        .btn-danger { background: rgba(255, 77, 77, 0.1); color: var(--danger); border: 1px solid rgba(255, 77, 77, 0.2); }
+
+        /* Modal Base */
+        .modal { 
+            position: fixed; inset: 0; background: rgba(0,0,0,0.98); 
+            display: none; justify-content: center; align-items: flex-start; 
+            z-index: 150000; padding: 20px; backdrop-filter: blur(15px); 
+            overflow-y: auto; -webkit-overflow-scrolling: touch;
+        }
+        .modal-content { 
+            background: var(--card-bg); padding: 0; border-radius: 40px; 
+            border: 1px solid #222; width: 100%; max-width: 500px; 
+            text-align: center; overflow: hidden; display: flex; 
+            flex-direction: column; margin: auto; position: relative;
+            max-height: none;
+        }
+
+        /* Input Normalizado (Sin padding de seguridad) */
+        .input-standard {
+            width: 100%; padding: 14px; background: #000; 
+            border: 1px solid #333; color: #fff; border-radius: 12px; 
+            font-size: 0.9rem; transition: 0.3s;
+        }
+        .input-standard:focus { border-color: var(--gold); box-shadow: 0 0 15px rgba(212,175,55,0.1); }
+
+        /* OVERRIDES GLASSMORPISM PARA GANADOR Y PUBLICIDAD */
+        #modalWinner {
+            display: none;
+            align-items: center !important;
+            justify-content: center !important;
+            background: rgba(0, 0, 0, 0.72) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            padding: 24px;
+        }
+
+        #modalAdHome {
+            background: rgba(0, 0, 0, 0.5) !important;
+            backdrop-filter: blur(15px) !important;
+            -webkit-backdrop-filter: blur(15px) !important;
+        }
+
+        #modalWinner .modal-content {
+            background: linear-gradient(135deg, #131316 0%, #0a0a0c 100%) !important;
+            border: 2px solid rgba(212, 175, 55, 0.65) !important;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), 0 0 50px rgba(212, 175, 55, 0.15) !important;
+            border-radius: 32px !important;
+            padding: 30px 24px !important;
+            max-width: 460px !important;
+            width: 100% !important;
+            transform: scale(0.95);
+            animation: modalContentPopIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        @keyframes modalContentPopIn {
+            to { transform: scale(1); }
+        }
+
+        #modalAdHome .modal-content {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        /* Jerarquía de capas de Modales */
+        #modalConfig { 
+            z-index: 9000; 
+            padding: 0 !important;
+            background: #050505 !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+        }
+        #modalConfig .modal-content {
+            width: 100vw !important;
+            max-width: 100vw !important;
+            height: 100vh !important;
+            height: 100dvh !important;
+            max-height: 100dvh !important;
+            border-radius: 0 !important;
+            border: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #050505 !important;
+            box-shadow: none !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        #modalEditFormFields, #modalAdd { z-index: 10000; }
+        #modalRegistration { z-index: 10500; }
+        #modalWinner { z-index: 11000; }
+        #modalAdHome { z-index: 12000; }
+        #modalVerify { z-index: 15000; }
+        #modalLicenseLock { z-index: 20000; } /* Máxima prioridad */
+        #modalQR { z-index: 13000; }
+
+        /* Estilos de Pestañas con Desplazamiento Horizontal */
+        .tabs-header { 
+            display: flex; 
+            background: #000; 
+            border-bottom: 1px solid #222; 
+            overflow-x: auto; 
+            white-space: nowrap; 
+            scrollbar-width: none; 
+            -webkit-overflow-scrolling: touch; 
+            position: sticky;
+            top: 0;
+            z-index: 100; /* Asegura que la cabecera siempre esté sobre el contenido */
+            flex-shrink: 0;
+        }
+        .tabs-header::-webkit-scrollbar { display: none; }
+        .tab-btn { 
+            flex: 0 0 auto; 
+            min-width: 100px; 
+            padding: 20px 18px; 
+            background: transparent; 
+            border: none; 
+            color: var(--tab-inactive); 
+            font-weight: 900; 
+            font-size: 0.65rem; 
+            letter-spacing: 1px; 
+            cursor: pointer; 
+            transition: 0.3s; 
+            position: relative; 
+            text-transform: uppercase; 
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .tab-btn svg {
+            width: 15px;
+            height: 15px;
+            stroke: currentColor;
+            stroke-width: 2;
+            transition: stroke 0.3s ease, transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        .tab-btn:hover svg {
+            transform: scale(1.12);
+        }
+        .tab-btn.active { color: var(--gold); }
+        .tab-btn.active::after { content: ''; position: absolute; bottom: 0; left: 15%; right: 15%; height: 3px; background: var(--gold); border-radius: 3px 3px 0 0; }
+        
+        .tabs-body { padding: 30px; overflow-y: auto; flex: 1; position: relative; }
+        .tab-pane { display: none; text-align: left; position: relative; min-height: 100%; }
+        .tab-pane.active { display: block; animation: fadeIn 0.3s ease; }
+        
+        /* Marca de agua / Icono flotante con opacidad en la parte inferior derecha */
+        .tab-pane-watermark {
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 180px;
+            height: 180px;
+            opacity: 0.025; /* Sutil y no intrusiva */
+            color: var(--gold);
+            pointer-events: none; /* No obstruye clics */
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+        .tab-pane-watermark svg {
+            width: 100%;
+            height: 100%;
+            stroke: currentColor;
+            stroke-width: 1.2;
+            fill: none;
+        }
+
+        /* Estilos de Sub-pestañas con Desplazamiento Horizontal */
+        .sub-tabs-header { 
+            display: flex; 
+            gap: 8px; 
+            background: #0b0b0b; 
+            padding: 8px; 
+            border-radius: 15px; 
+            margin-bottom: 25px; 
+            border: 1px solid #1a1a1a; 
+            overflow-x: auto; 
+            scrollbar-width: none; 
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+        }
+        .sub-tabs-header::-webkit-scrollbar { display: none; }
+        .sub-tab-btn { flex: 0 0 auto; padding: 12px 20px; background: transparent; border: none; color: #999; font-weight: 800; font-size: 0.6rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; border-radius: 10px; text-transform: uppercase; }
+        .sub-tab-btn.active { background: #161616; color: var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid #222; }
+
+        .sub-tab-pane { display: none; animation: fadeIn 0.2s ease; }
+        .sub-tab-pane.active { display: block; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        .config-section { margin-bottom: 25px; }
+        .config-section h4 { color: var(--gold); margin-bottom: 15px; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 900; border-bottom: 1px solid #1a1a1a; padding-bottom: 8px; }
+        
+        /* Subscription UI Styling */
+        .subscription-card {
+            background: #000;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+        }
+        .subscription-card.active-lite { border-color: var(--gold); box-shadow: 0 0 20px rgba(212,175,55,0.1); }
+        .subscription-card.active-pro { border-color: var(--success); box-shadow: 0 0 25px rgba(0,200,83,0.15); }
+        .subscription-card.active-ent { border-color: #00e5ff; box-shadow: 0 0 30px rgba(0,229,255,0.2); }
+        .subscription-card.expired { border-color: var(--danger); box-shadow: 0 0 20px rgba(255,77,77,0.1); }
+
+        .tier-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.55rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+        }
+        .tier-lite { background: rgba(212,175,55,0.1); color: var(--gold); }
+        .tier-pro { background: rgba(0,200,83,0.1); color: var(--success); }
+        .tier-ent { background: rgba(0,229,255,0.1); color: #00e5ff; }
+        .tier-expired { background: rgba(255,77,77,0.1); color: var(--danger); }
+
+        #historyList, #leadsList { max-height: 400px; overflow-y: auto; text-align: left; background: #000; border-radius: 20px; padding: 20px; border: 1px solid #222; }
+        .history-item, .lead-item { padding: 15px 0; border-bottom: 1px solid #1a1a1a; font-size: 0.85rem; display: flex; align-items: flex-start; }
+
+        /* Form Fields Editor Styles */
+        .field-editor-item {
+            background: #0b0b0b;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #222;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .btn-remove-field {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 77, 77, 0.1);
+            color: var(--danger);
+            border: 1px solid rgba(255, 77, 77, 0.2);
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            font-size: 0.6rem;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 10;
+        }
+
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #000;
+            padding: 15px;
+            border-radius: 15px;
+            border: 1px solid #222;
+            margin-bottom: 10px;
+        }
+
+        /* Nexo Switch and Game Locking CSS */
+        .nexo-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+        .nexo-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .nexo-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: .3s;
+            border-radius: 34px;
+        }
+        .nexo-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 3px;
+            bottom: 3px;
+            background-color: #777;
+            transition: .3s;
+            border-radius: 50%;
+        }
+        .nexo-switch input:checked + .nexo-slider {
+            background-color: rgba(6, 182, 212, 0.15); /* cyan/gold variable color dynamically */
+            border-color: var(--gold);
+        }
+        .nexo-switch input:checked + .nexo-slider:before {
+            transform: translateX(24px);
+            background-color: var(--gold);
+        }
+        .config-section-dimmed {
+            opacity: 0.25 !important;
+            filter: grayscale(100%) !important;
+            pointer-events: none !important;
+            user-select: none !important;
+            transition: all 0.4s ease-in-out;
+        }
+        .config-options-disabled input:not(.report-toggle-btn),
+        .config-options-disabled select,
+        .config-options-disabled textarea,
+        .config-options-disabled button:not(.report-toggle-btn) {
+            pointer-events: none !important;
+            opacity: 0.4 !important;
+            cursor: not-allowed !important;
+        }
+        .game-header-toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Estilos Temas */
+        .theme-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+        .theme-card { 
+            background: #000; border: 1px solid #222; border-radius: 15px; padding: 15px; 
+            text-align: center; cursor: pointer; transition: 0.3s; position: relative;
+        }
+        .theme-card.active { border-color: var(--gold); box-shadow: 0 0 15px rgba(212,175,55,0.1); }
+        .theme-card.disabled { opacity: 0.4; cursor: not-allowed; }
+        .theme-preview { height: 40px; border-radius: 8px; margin-bottom: 10px; display: flex; }
+        .theme-name { font-size: 0.6rem; font-weight: 900; color: #fff; text-transform: uppercase; letter-spacing: 1px; }
+        .theme-badge { position: absolute; top: -8px; right: -8px; background: var(--gold); color: #000; font-size: 0.5rem; font-weight: 900; padding: 2px 6px; border-radius: 5px; }
+
+        /* Panel de Personalización Temática */
+        #themeCustomPanel {
+            background: #080808;
+            border: 1px solid #222;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 15px;
+            animation: fadeIn 0.3s ease;
+        }
+        .custom-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            background: #000;
+            padding: 10px 15px;
+            border-radius: 15px;
+            border: 1px solid #111;
+        }
+        .custom-label {
+            font-size: 0.6rem;
+            font-weight: 900;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .custom-controls {
+            display: flex;
+            align-items: center; gap: 10px;
+        }
+        .mini-preview {
+            width: 35px;
+            height: 35px;
+            border-radius: 8px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: rgba(0,0,0,0.3);
+            border: 1px solid #333;
+        }
+
+        /* Galería de carrusel */
+        .carousel-gallery {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--gold) #000;
+        }
+        .carousel-item-admin {
+            position: relative;
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: #050505;
+        }
+        .carousel-item-remove {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--danger);
+            color: white;
+            border: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            font-size: 10px;
+            cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 10;
+        }
+
+        #adHomeContainer img, #adHomeContainer video {
+            transition: opacity 0.5s ease;
+            max-width: 100%;
+            max-height: 75vh;
+            border-radius: 20px;
+            object-fit: contain;
+        }
+
+        /* Banner dinámico UI */
+        #bannerContainer {
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            background: rgba(0,0,0,0.4); /* Transparencia para efecto glassmorphism */
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 400;
+            overflow: hidden;
+            backdrop-filter: blur(15px); /* Efecto de desenfoque */
+            -webkit-backdrop-filter: blur(15px);
+            transition: opacity 0.3s ease;
+        }
+        #bannerImg, #bannerVideo {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+            transition: opacity 0.5s ease;
+            position: absolute;
+            inset: 0;
+        }
+
+        @media (max-width: 900px) {
+            #btnOpenMenu { 
+                bottom: max(16px, env(safe-area-inset-bottom, 16px)); 
+                right: max(16px, env(safe-area-inset-right, 16px)); 
+                padding: 10px 18px; 
+                font-size: 0.6rem; 
+            }
+            .app-container { 
+                --wheel-size: min(82vw, 48dvh); 
+            }
+            .app-container.banner-ad-active {
+                --wheel-size: min(80vw, 38dvh);
+            }
+            .title-area { 
+                padding: 12px 10px; 
+            }
+            .wheel-section {
+                padding-bottom: 65px !important;
+            }
+        }
+
+        @media (max-height: 650px) {
+            .app-container { 
+                --wheel-size: min(80vw, 45dvh); 
+            }
+            .app-container.banner-ad-active {
+                --wheel-size: min(75vw, 35dvh);
+            }
+            .title-area { 
+                padding: 8px 10px; 
+            }
+            .wheel-section {
+                padding-bottom: 55px !important;
+            }
+        }
+
+        /* RESPONSIVIDAD LOGIN */
+        @media (max-width: 480px) {
+            .login-card { padding: 35px 25px; border-radius: 30px; }
+            .login-card h2 { font-size: 2rem !important; }
+            .input-pin { padding: 15px; padding-right: 75px; font-size: 1rem; }
+            .password-toggle { right: 10px; bottom: 10px; padding: 5px 8px; font-size: 0.55rem; }
+            .input-group label { font-size: 0.65rem; margin-bottom: 6px; }
+        }
+
+        /* OPTIMIZACIÓN LANDSCAPE / TV */
+        @media (orientation: landscape) {
+            .app-container {
+                padding: 15px;
+                justify-content: flex-start;
+                --wheel-size: 80vh;
+                --wheel-max-size: 80vh;
+            }
+            .app-container.banner-ad-active {
+                --wheel-size: 68vh;
+                --wheel-max-size: 68vh;
+            }
+            .wheel-section {
+                justify-content: flex-start;
+                padding-top: env(safe-area-inset-top, 0);
+            }
+            .title-area {
+                flex: 0 0 auto;
+                padding: 10px 10px 5px 10px;
+                min-height: auto;
+            }
+            #mainTitle {
+                font-size: clamp(1rem, 6vh, 4rem) !important;
+                margin-bottom: 2px;
+            }
+            #mainSubtitle {
+                margin-top: 2px;
+                font-size: clamp(0.6rem, 2vh, 1.2rem) !important;
+            }
+            .wheel-wrapper {
+                width: var(--wheel-size);
+                height: var(--wheel-size);
+                max-width: var(--wheel-max-size);
+                max-height: var(--wheel-max-size);
+                aspect-ratio: 1 / 1;
+                margin: 0 auto;
+                flex: 0 0 auto;
+            }
+        }
+
+        /* OPTIMIZACIÓN ESPECIAL PARA DISPOSITIVOS MÓVILES EN HORIZONTAL (DETECTA LA ORIENTACIÓN) */
+        @media (orientation: landscape) and (max-height: 550px) {
+            .app-container {
+                padding: 10px !important;
+                display: flex !important;
+                flex-direction: row !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            .wheel-section {
+                display: grid !important;
+                grid-template-columns: 1.2fr 1.1fr !important;
+                grid-template-rows: auto auto !important;
+                grid-template-areas: 
+                    "title wheel"
+                    "action wheel" !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 15px !important;
+                padding: 0 10px !important;
+                padding-bottom: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+            }
+            .title-area {
+                grid-area: title !important;
+                text-align: left !important;
+                align-items: flex-start !important;
+                justify-content: center !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                flex: none !important;
+            }
+            #mainTitle {
+                font-size: clamp(1.2rem, 8vh, 2.5rem) !important;
+                text-align: left !important;
+                padding: 0 !important;
+            }
+            #mainSubtitle {
+                font-size: clamp(0.6rem, 3.5vh, 1rem) !important;
+                text-align: left !important;
+                margin-top: 2px !important;
+            }
+            .wheel-wrapper {
+                grid-area: wheel !important;
+                align-self: center !important;
+                justify-self: center !important;
+                --wheel-size: min(85vw, 85vh) !important;
+                --wheel-max-size: min(85vw, 85vh) !important;
+                width: var(--wheel-size) !important;
+                height: var(--wheel-size) !important;
+                margin: 0 auto !important;
+                flex: none !important;
+            }
+            #lightningTimerContainer {
+                top: 50px !important;
+                left: 15px !important;
+                right: auto !important;
+                scale: 0.8 !important;
+                transform-origin: top left !important;
+            }
+            #btnOpenMenu {
+                bottom: 10px !important;
+                right: 10px !important;
+                padding: 8px 16px !important;
+                font-size: 0.6rem !important;
+            }
+        }
+
+        /* Centrado Absoluto cuando Sorteo está OFF, o en Modo Espejo / Participación */
+        .app-container.raffle-off .wheel-section,
+        body.is-live-view .wheel-section,
+        body.is-guest-mode .wheel-section {
+            justify-content: center !important;
+            padding-top: 0 !important;
+        }
+        .app-container.raffle-off .title-area,
+        body.is-live-view .title-area,
+        body.is-guest-mode .title-area {
+            flex: 0 0 auto !important;
+            padding: 15px !important;
+        }
+        /* Ajuste específico para TV/Landscape cuando Sorteo está OFF, o en Modo Espejo / Participación */
+        @media (orientation: landscape) {
+            .app-container.raffle-off .wheel-section,
+            body.is-live-view .wheel-section,
+            body.is-guest-mode .wheel-section {
+                justify-content: center !important;
+            }
+            .app-container.raffle-off .wheel-wrapper,
+            body.is-live-view .wheel-wrapper,
+            body.is-guest-mode .wheel-wrapper {
+                margin: 0 auto !important;
+            }
+        }
+
+        /* Estilos del Selector de Temas */
+        #themeSelector {
+            cursor: pointer;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Forzar Aspect Ratio en Videos de Admin */
+        #adminVideoPreview, #adminFrequencyVideoPreview {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: contain;
+            background: #000;
+        }
+
+        /* Utilidades Responsivas */
+        .flex-row-responsive { display: flex; gap: 10px; align-items: center; }
+        @media (max-width: 480px) {
+            .flex-row-responsive { flex-direction: column; align-items: stretch; }
+            .flex-row-responsive > * { width: 100% !important; }
+            .modal-content { padding: 20px !important; border-radius: 25px !important; }
+            .tabs-body { padding: 15px !important; }
+        }
+
+        /* Optimización Escritorio (Ruleta Nexo Premium Layout) */
+        @media (min-width: 992px) {
+
+            #modalEditFormFields .modal-content {
+                max-width: 650px !important;
+                width: 85vw !important;
+                border-radius: 30px !important;
+            }
+            #modalRegistration .modal-content {
+                max-width: 580px !important;
+                width: 85vw !important;
+                border-radius: 30px !important;
+            }
+            #modalAdd .modal-content {
+                max-width: 600px !important;
+                width: 85vw !important;
+                border-radius: 30px !important;
+            }
+
+            /* Cabeceras de Pestañas Centradas y Fluidas */
+            .tabs-header {
+                justify-content: center !important;
+                overflow-x: visible !important;
+                white-space: normal !important;
+                flex-wrap: wrap !important;
+                background: #050505 !important;
+                border-bottom: 2px solid #161616 !important;
+            }
+            .tab-btn {
+                flex: 1 1 auto !important;
+                text-align: center !important;
+                padding: 22px 18px !important;
+                font-size: 0.72rem !important;
+                letter-spacing: 1.5px !important;
+                border-right: 1px solid #111 !important;
+            }
+            .tab-btn:last-child {
+                border-right: none !important;
+            }
+
+            /* Distribución Dashboard (Bento-Grid) para Secciones de Configuración */
+            #tab-leads.tab-pane.active,
+            #tab-ajustes.tab-pane.active,
+            #tab-publicidad.tab-pane.active,
+            #tab-superadmin.tab-pane.active,
+            #subtab-cuenta.sub-tab-pane.active,
+            #subtab-personalizacion.sub-tab-pane.active {
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 25px !important;
+                align-items: start !important;
+            }
+
+            /* Separar tab-admin para tener 3 columnas por fila en escritorio */
+            #tab-admin.tab-pane.active {
+                display: grid !important;
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 25px !important;
+                align-items: start !important;
+            }
+
+            /* Forzar ciertos elementos a pantalla completa o doble columna */
+            #tab-leads.tab-pane.active .config-section:nth-of-type(2), /* Lista de leads */
+            #tab-superadmin.tab-pane.active .config-section:nth-of-type(3) /* Lista de usuarios y premium accounts */ {
+                grid-column: span 2 !important;
+            }
+
+            /* Métricas/Analítica (7ma sección en tab-admin) expandida a las 3 columnas */
+            #tab-admin.tab-pane.active .config-section:nth-of-type(7) {
+                grid-column: span 3 !important;
+            }
+
+            /* Sub-pestañas para Cuenta/Personalización en Escritorio */
+            .sub-tabs-header {
+                justify-content: center !important;
+                overflow-x: visible !important;
+                white-space: normal !important;
+                flex-wrap: wrap !important;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .sub-tab-btn {
+                flex: 1 1 auto !important;
+                text-align: center !important;
+            }
+        }
+
+        /* Estilos Analítica */
+        .stat-bar-container { background: #111; height: 12px; border-radius: 6px; overflow: hidden; margin-top: 5px; border: 1px solid #222; }
+        .stat-bar-fill { height: 100%; background: var(--gold); transition: width 0.8s ease-out; }
+        .stat-label { display: flex; justify-content: space-between; font-size: 0.65rem; color: #fff; text-transform: uppercase; font-weight: 800; }
+
+        /* Publicidad/Streaming Lateral Persistente (Efecto Ventana Emergente) */
+        #sideAdContainer, #sideStreamingContainer {
+            display: none;
+            flex: 1;
+            height: 100vh;
+            position: relative;
+            z-index: 5;
+            transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            padding: 20px;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+        }
+        #sideStreamingContainer {
+            pointer-events: none;
+        }
+        .side-ad-window {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            background: #000;
+            border: none;
+            border-radius: 9px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: adWindowPop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes adWindowPop {
+            from { transform: scale(0.8) translateY(30px); opacity: 0; }
+            to { transform: scale(1) translateY(0); opacity: 1; }
+        }
+        .side-ad-window img, .side-ad-window video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .app-container.side-ad-active {
+            flex-direction: row !important;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .app-container.side-ad-active.side-ad-right {
+            flex-direction: row-reverse !important;
+        }
+        .app-container.side-ad-active .wheel-section {
+            width: 50vw;
+            flex: 0 0 50vw;
+            transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+            padding-bottom: 20px !important;
+        }
+        #sideAdContainer, #sideStreamingContainer {
+            width: 46vw;
+            flex: 0 0 46vw;
+            transition: 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        @media (max-width: 1000px) {
+            #sideAdContainer, #sideStreamingContainer { width: 45vw; padding: 15px; }
+            .app-container.side-ad-active .wheel-section { width: 50vw; flex: 0 0 50vw; padding-bottom: 20px !important; }
+        }
+        @media (max-width: 580px) {
+            /* Forzar comportamiento vertical para ambas posiciones (Izquierda y Derecha) */
+            .app-container.side-ad-active, 
+            .app-container.side-ad-active.side-ad-right { 
+                flex-direction: column !important; 
+                gap: 10px;
+            }
+            #sideAdContainer, #sideStreamingContainer { width: 100vw; height: 40vh; padding: 10px; }
+            .app-container.side-ad-active .wheel-section { width: 100vw; flex: 1; padding-bottom: 75px !important; }
+        }
+
+        /* Ajuste dinámico del temporizador del Juego Relámpago y publicidad */
+        #lightningTimerContainer {
+            z-index: 2000 !important; /* Asegurar que esté por encima de la publicidad */
+        }
+
+        /* Default landscape behavior (Desktop & Horizontal Mobile) */
+        @media (orientation: landscape) {
+            #lightningTimerContainer {
+                top: 60px !important;
+                left: 20px !important;
+                right: auto !important;
+                transform-origin: top left !important;
+            }
+        }
+
+        /* Portrait behavior */
+        @media (orientation: portrait) {
+            #lightningTimerContainer {
+                top: calc(15px + env(safe-area-inset-top, 0px)) !important;
+                right: calc(15px + env(safe-area-inset-right, 0px)) !important;
+                left: auto !important;
+                transform-origin: top right !important;
+            }
+
+            .app-container.has-lightning-timer {
+                padding-top: calc(75px + env(safe-area-inset-top, 10px)) !important;
+            }
+            
+            .app-container.has-lightning-timer.banner-ad-top {
+                padding-top: calc(75px + var(--banner-height, 60px) + env(safe-area-inset-top, 10px)) !important;
+            }
+            
+            .app-container.has-lightning-timer.banner-ad-top #bannerContainer {
+                top: 75px !important;
+                border-top: 1px solid #1a1a1a !important;
+                border-bottom: 1px solid #1a1a1a !important;
+            }
+        }
+        
+        @media (orientation: portrait) and (max-width: 480px) {
+            #lightningTimerContainer {
+                scale: 0.9 !important;
+                transform-origin: top right !important;
+            }
+        }
+
+        @media (max-width: 580px) {
+            /* Cuando el temporizador está activo en pantallas móviles, reducimos la altura de la publicidad vertical */
+            .app-container.has-lightning-timer.side-ad-active #sideAdContainer,
+            .has-lightning-timer #sideAdContainer,
+            .app-container.has-lightning-timer.side-ad-active #sideStreamingContainer,
+            .has-lightning-timer #sideStreamingContainer {
+                height: 30vh !important;
+            }
+        }
+
+        /* Efectos de suspenso del Juego Relámpago */
+        @keyframes timer-warning-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.08); text-shadow: 0 0 15px #f97316; }
+            100% { transform: scale(1); }
+        }
+        @keyframes timer-danger-shake {
+            0% { transform: translate(0, 0) scale(1.15); }
+            10% { transform: translate(-2px, -2px) scale(1.18); text-shadow: 0 0 25px #ef4444; }
+            20% { transform: translate(2px, -2px) scale(1.18); }
+            30% { transform: translate(-2px, 2px) scale(1.18); }
+            40% { transform: translate(2px, 2px) scale(1.18); }
+            50% { transform: translate(-2px, -2px) scale(1.18); }
+            60% { transform: translate(2px, -2px) scale(1.18); }
+            70% { transform: translate(-2px, 2px) scale(1.18); }
+            80% { transform: translate(2px, 2px) scale(1.18); }
+            90% { transform: translate(-2px, -2px) scale(1.18); }
+            100% { transform: translate(0, 0) scale(1.18); text-shadow: 0 0 25px #ef4444; }
+        }
+        @keyframes bg-vignette-pulse {
+            0% { box-shadow: inset 0 0 40px rgba(0,0,0,0.85); border-color: rgba(239,68,68,0.2); }
+            50% { box-shadow: inset 0 0 80px rgba(239,68,68,0.55); border-color: rgba(239,68,68,0.6); }
+            100% { box-shadow: inset 0 0 40px rgba(0,0,0,0.85); border-color: rgba(239,68,68,0.2); }
+        }
+        .timer-warning {
+            animation: timer-warning-pulse 1s infinite ease-in-out;
+            color: #f97316 !important;
+        }
+        .timer-danger {
+            animation: timer-danger-shake 0.15s infinite linear;
+            color: #ef4444 !important;
+        }
+        .vignette-suspense {
+            animation: bg-vignette-pulse 0.4s infinite ease-in-out;
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9998;
+            border: 4px solid rgba(239,68,68,0.4);
+            border-radius: 0px;
+        }
+
+        /* Lightning Game (Juego Relámpago) Custom Animations */
+        @keyframes shake-screen {
+            0% { transform: translate(0, 0) scale(1); }
+            10% { transform: translate(-3px, -3px) scale(1.002); }
+            20% { transform: translate(3px, -1px) scale(0.998); }
+            30% { transform: translate(-4px, 1px) scale(1.003); }
+            40% { transform: translate(3px, 3px) scale(1); }
+            50% { transform: translate(-1px, -3px) scale(1.002); }
+            60% { transform: translate(4px, 1px) scale(0.998); }
+            70% { transform: translate(-3px, -1px) scale(1.003); }
+            80% { transform: translate(3px, 1px) scale(1); }
+            90% { transform: translate(-1px, 3px) scale(1.002); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+        .screen-shake-active {
+            animation: shake-screen 0.1s infinite !important;
+        }
+
+        @keyframes heartbeat-pulse {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.05); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.05); }
+            70% { transform: scale(1); }
+        }
+        .wheel-heartbeat {
+            animation: heartbeat-pulse 0.8s infinite ease-in-out !important;
+        }
+
+        @keyframes lightning-flash {
+            0% { background-color: transparent; opacity: 1; }
+            100% { background-color: transparent; opacity: 0; }
+        }
+        .lightning-flash-active {
+            animation: lightning-flash 0.35s ease-out forwards;
+        }
+
+        @keyframes electric-border-pulse {
+            0% {
+                box-shadow: 0 0 15px #00f3ff, 0 0 30px rgba(0, 243, 255, 0.5), inset 0 0 15px #00f3ff;
+            }
+            50% {
+                box-shadow: 0 0 25px var(--gold), 0 0 45px rgba(212, 175, 55, 0.7), inset 0 0 20px var(--gold);
+            }
+            100% {
+                box-shadow: 0 0 15px #00f3ff, 0 0 30px rgba(0, 243, 255, 0.5), inset 0 0 15px #00f3ff;
+            }
+        }
+        .electric-contour-glow {
+            animation: electric-border-pulse 0.15s infinite ease-in-out !important;
+            border-radius: 50% !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Overlay de Suspenso para el Juego Relámpago -->
+    <div id="suspenseOverlay" style="display: none;"></div>
+    <div id="lightningScreenOverlay" style="position: fixed; inset: 0; pointer-events: none; z-index: 9999; width: 100%; height: 100%; overflow: hidden; display: none;"></div>
+
+    <!-- Modal de Bloqueo por Licencia Expirada -->
+    <div id="modalLicenseLock" class="modal" style="background: rgba(0,0,0,0.99); backdrop-filter: blur(40px);">
+        <div class="modal-content" style="padding: 40px; border: 1px solid var(--danger); max-width: 450px; overflow-y: auto;">
+            <div style="font-size: 3rem; margin-bottom: 20px;">🔒</div>
+            <h2 style="color: var(--danger); font-weight: 900; text-transform: uppercase; letter-spacing: 3px; margin: 0; font-size: 1.2rem;">SISTEMA BLOQUEADO</h2>
+            <p style="color: #aaa; font-size: 0.75rem; margin-top: 10px; margin-bottom: 25px; line-height: 1.5;">Su licencia de Ruleta Nexo Premium ha expirado o no es válida. Por favor, ingrese una nueva llave de activación para continuar.</p>
+            
+            <!-- Identidad de Dispositivo en Bloqueo -->
+            <div style="background: #000; padding: 15px; border-radius: 15px; border: 1px solid #222; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; text-align: left;">
+                <div>
+                    <p style="color: #888; font-size: 0.5rem; margin: 0; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">ID DE DISPOSITIVO (HARDWARE)</p>
+                    <p id="nexoDeviceIdDisplayLock" style="color: var(--gold); font-family: monospace; font-size: 0.85rem; font-weight: 900; margin: 3px 0 0 0;">NX-0000-0000</p>
+                </div>
+                <button id="btnCopyDeviceIdLock" class="btn btn-secondary" style="padding: 8px 12px; font-size: 0.55rem; border-color: #333;">COPIAR ID</button>
+            </div>
+
+            <div class="input-group">
+                <label>LLAVE DE ACTIVACIÓN</label>
+                <input type="text" id="licenseKeyInputLock" class="input-pin" placeholder="XXXX-XXXX-XXXX-XXXX" style="text-align: center; letter-spacing: 4px; font-weight: 900;">
+            </div>
+
+            <button id="btnActivateLicenseLock" class="btn btn-primary" style="width: 100%; margin-top: 10px; border: 1px solid rgba(255,255,255,0.1);">ACTIVAR SISTEMA</button>
+            
+            <!-- Ventas y Soporte en Bloqueo -->
+            <div style="margin-top: 30px; border-top: 1px solid #222; padding-top: 20px; text-align: center;">
+                <p style="color: #888; font-size: 0.6rem; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Solicitar Licencia / Soporte Técnico</p>
+                <p style="color: var(--gold); font-weight: 900; margin: 0; font-size: 0.9rem; letter-spacing: 1px;">Nexo Network Ec</p>
+                <p style="color: #ccc; font-size: 0.75rem; margin: 5px 0;">nexonetwork.ec@gmail.com</p>
+                <p style="color: #fff; font-size: 0.85rem; margin: 0; font-weight: 800;">+593 0998166596</p>
+            </div>
+
+            <p style="margin-top: 25px; font-size: 0.5rem; color: #666; letter-spacing: 2px; text-transform: uppercase;">RULETA NEXO PREMIUM GLOBAL LICENSE SYSTEM</p>
+        </div>
+    </div>
+
+    <div id="loginScreen">
+        <div class="login-card">
+            <div style="display: flex; justify-content: center; margin-bottom: 20px;">
+                <img src="/icon.png" alt="Ruleta Nexo Premium Official Logo" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid var(--gold); box-shadow: 0 0 20px rgba(212,175,55,0.4); object-fit: cover;" referrerPolicy="no-referrer">
+            </div>
+            <h2 style="color: var(--gold); font-size: 2.2rem; font-weight: 900; margin:0; line-height: 1.2;">RULETA NEXO</h2>
+            <p style="color: #888; font-size: 0.7rem; letter-spacing: 5px; margin-bottom: 30px; text-transform: uppercase;">PREMIUM</p>
+            
+            <!-- Área de Login -->
+            <div id="loginFormArea">
+                <div style="margin-bottom: 15px;">
+                    <div class="toggle-container" style="background: rgba(255,255,255,0.02); border: 1px solid #111; padding: 10px 12px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 0;">
+                        <span style="font-size: 0.55rem; color: #aaa; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">COLABORADOR</span>
+                        <input type="checkbox" id="chkIsSubAccount" style="width:16px; height:16px; cursor: pointer;">
+                    </div>
+                </div>
+                
+                <!-- Selector de método de colaborador (oculto por defecto) -->
+                <div id="collabMethodToggle" style="display: none; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 15px; background: #000; padding: 3px; border-radius: 8px; border: 1px solid #111;">
+                    <button id="btnCollabMethodId" type="button" style="padding: 6px; font-size: 0.6rem; border-radius: 6px; font-weight: 800; border: none; background: var(--gold); color: #000; cursor: pointer; text-transform: uppercase;">ID Único</button>
+                    <button id="btnCollabMethodLegacy" type="button" style="padding: 6px; font-size: 0.6rem; border-radius: 6px; font-weight: 800; border: none; background: transparent; color: #aaa; cursor: pointer; text-transform: uppercase;">Tradicional</button>
+                </div>
+                
+                <div class="input-group">
+                    <label id="lblAuthEmail">Email del Administrador</label>
+                    <input type="email" id="authEmail" class="input-pin" placeholder="usuario@empresa.com">
+                </div>
+
+
+                <div class="input-group">
+                    <label id="lblAuthPin">Contraseña / PIN</label>
+                    <input type="password" id="authPin" class="input-pin" placeholder="••••••••">
+                    <span class="password-toggle" onclick="togglePassword('authPin', this)">Ver</span>
+                </div>
+
+                <button id="btnAuthAction" class="btn btn-primary" style="width: 100%;">ACCEDER</button>
+                <p style="margin-top: 20px; font-size: 0.75rem; color: #aaa;">¿No tienes cuenta? <a href="#" id="linkToRegister" style="color: var(--gold); text-decoration: none; font-weight: 800;">Regístrate</a></p>
+            </div>
+
+            <!-- Área de Registro (Oculta por defecto) -->
+            <div id="registerFormArea" style="display: none;">
+                <div class="input-group"><label>Empresa / Local</label><input type="text" id="regCorpName" class="input-pin" placeholder="Nombre Comercial"></div>
+                <div class="input-group"><label>Email de Admin</label><input type="email" id="regEmail" class="input-pin" placeholder="admin@empresa.com"></div>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="regPin" class="input-pin" placeholder="••••••••">
+                    <span class="password-toggle" onclick="togglePassword('regPin', this)">Ver</span>
+                </div>
+                <div class="input-group">
+                    <label>Confirmar Contraseña</label>
+                    <input type="password" id="regPinConfirm" class="input-pin" placeholder="••••••••">
+                    <span class="password-toggle" onclick="togglePassword('regPinConfirm', this)">Ver</span>
+                </div>
+
+                <!-- Checklist de Edad y Términos para Registro -->
+                <div style="text-align: left; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.03); padding: 12px 14px; border-radius: 12px;">
+                    <div style="display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="regAgeCheck" style="width: 16px; height: 16px; min-width: 16px; margin-top: 2px; cursor: pointer; accent-color: var(--gold);">
+                        <label for="regAgeCheck" style="font-size: 0.7rem; color: #bbb; cursor: pointer; user-select: none; line-height: 1.3; font-weight: 500;">Soy mayor de 18 años.</label>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 10px;">
+                        <input type="checkbox" id="regTermsCheck" style="width: 16px; height: 16px; min-width: 16px; margin-top: 2px; cursor: pointer; accent-color: var(--gold);">
+                        <label for="regTermsCheck" style="font-size: 0.7rem; color: #bbb; cursor: pointer; user-select: none; line-height: 1.3; font-weight: 500;">Acepto los <a href="#" id="linkTermsReg" style="color: var(--gold); text-decoration: underline; font-weight: 800; outline: none;">Términos y Condiciones</a>.</label>
+                    </div>
+                </div>
+
+                <button id="btnRegisterAction" class="btn btn-primary" style="width: 100%;" disabled>CREAR CUENTA</button>
+                <p style="margin-top: 20px; font-size: 0.75rem; color: #aaa;">¿Ya tienes cuenta? <a href="#" id="linkToLogin" style="color: var(--gold); text-decoration: none; font-weight: 800;">Inicia Sesión</a></p>
+            </div>
+
+            <p style="margin-top:25px; font-size:0.85rem; color:var(--gold); text-transform: uppercase; letter-spacing: 1px; font-weight: 900; opacity: 0.8;">Desarrollado por Nexo Network Ec</p>
+        </div>
+    </div>
+
+    <div class="app-container" id="appMain">
+        <button id="btnOpenMenu">MENÚ</button>
+
+        <div id="sideAdContainer">
+            <!-- Contenido dinámico -->
+        </div>
+
+        <div id="sideStreamingContainer">
+            <!-- Contenido dinámico -->
+        </div>
+
+        <nexo-game-board class="wheel-section" id="nexoGameBoard">
+            <div class="title-area">
+                <h2 id="mainTitle" contenteditable="false" spellcheck="false">RULETA PREMIUM</h2>
+                <p id="mainSubtitle" contenteditable="false" spellcheck="false">SISTEMA DE SORTEO</p>
+            </div>
+
+            <!-- Temporizador del Juego Relámpago (Estilo HUD, no configurable aquí) -->
+            <div id="lightningTimerContainer" style="display: none; position: absolute; top: 60px; left: 20px; gap: 12px; z-index: 1000; align-items: center; pointer-events: none;">
+                <!-- Temporizador de cuenta regresiva -->
+                <div id="lightningTimerCountdown" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 10px 18px; background: rgba(0,0,0,0.85); border: 2px solid var(--gold); border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.8), inset 0 0 10px rgba(212,175,55,0.15); min-width: 130px;">
+                    <span style="font-size: 0.55rem; color: var(--gold); letter-spacing: 2px; font-weight: 900; text-transform: uppercase; margin-bottom: 2px;">⚡ RELÁMPAGO</span>
+                    <div id="timerDisplay" style="font-family: 'JetBrains Mono', monospace, sans-serif; font-size: 2rem; font-weight: 900; color: #fff; text-shadow: 0 0 10px var(--gold); line-height: 1;">03:00</div>
+                </div>
+
+                <!-- Temporizador/Fecha Programada (Estilo HUD a la derecha del contador) -->
+                <div id="scheduledTimeContainer" style="display: none; flex-direction: column; align-items: center; justify-content: center; padding: 10px 18px; background: rgba(0,0,0,0.85); border: 2px solid var(--gold); border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.8), inset 0 0 10px rgba(212,175,55,0.15); min-width: 150px;">
+                    <span style="font-size: 0.55rem; color: var(--gold); letter-spacing: 2px; font-weight: 900; text-transform: uppercase; margin-bottom: 2px;">📅 PROGRAMADO</span>
+                    <div id="scheduledTimeDisplay" style="font-family: 'JetBrains Mono', monospace, sans-serif; font-size: 0.95rem; font-weight: 900; color: #fff; text-shadow: 0 0 10px var(--gold); line-height: 1;">--/--/---- --:--:--</div>
+                </div>
+            </div>
+
+            <div class="wheel-wrapper">
+                <div id="pointer"></div>
+                <div id="centerLogo"><button id="btnSpinCenter">GIRAR</button></div>
+                <canvas id="wheelCanvas" width="1000" height="1000"></canvas>
+            </div>
+        </nexo-game-board>
+
+        <div id="bannerContainer">
+            <!-- El contenido se inyecta dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Modal QR de Conversión -->
+    <div id="modalQR" class="modal">
+        <div class="modal-content" style="padding: 30px 25px; border: 2px solid var(--gold); max-width: 450px; max-height: 90vh; overflow-y: auto; align-items: center; display: flex; flex-direction: column; background: #060709;">
+            <h3 id="qrTitle" style="color: var(--gold); margin-top: 0; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; text-align: center; width: 100%; font-size: 1.3rem;">¡ESCANEA Y GANA MÁS!</h3>
+            <p id="qrMessage" style="color: #777; font-size: 0.8rem; margin-bottom: 20px; line-height: 1.5; text-align: center; width: 100%;">Sigue nuestras redes o califica nuestro servicio para obtener beneficios exclusivos.</p>
+            
+            <div id="qrContainer" style="background: #fff; padding: 15px; border-radius: 15px; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px auto; box-shadow: 0 10px 30px rgba(0,0,0,0.5); width: fit-content; align-self: center; position: relative;">
+                <img id="qrImage" src="" style="width: 220px; height: 220px; display: block;">
+                <!-- Centered overlay image for preview -->
+                <img id="qrLogoOverlay" src="" style="position: absolute; width: 44px; height: 44px; background: white; padding: 2px; border-radius: 6px; display: none; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid #ddd; object-fit: contain;">
+            </div>
+
+            <!-- NUEVO: Sección de Enlace de Participación en el modal QR -->
+            <div id="divLiveViewLinkContainer" style="display: none; width: 100%; background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.2); padding: 12px; border-radius: 10px; margin-bottom: 20px; text-align: left;">
+                <label style="font-size: 0.6rem; color: var(--gold); font-weight: 800; display: block; margin-bottom: 6px; text-transform: uppercase;">🔗 ENLACE DE PARTICIPACIÓN / REGISTRO</label>
+                <div style="display: flex; gap: 8px;">
+                    <input type="text" id="inputLiveViewUrl" readonly class="input-pin" style="padding: 8px; font-size: 0.7rem; flex: 1; text-align: left; background: #000; border: 1px solid #222;" value="">
+                    <button id="btnCopyLiveViewUrl" class="btn btn-secondary" style="font-size: 0.65rem; padding: 8px 12px; margin: 0; min-height: unset; width: auto; height: auto; line-height: 1;">COPIAR</button>
+                </div>
+                <p style="font-size: 0.55rem; color: #666; margin: 6px 0 0 0; line-height: 1.3;">Comparte este enlace para que los participantes se registren y jueguen desde sus propios dispositivos.</p>
+            </div>
+
+            <!-- Botones de Acción de QR -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; width: 100%; margin-bottom: 15px;">
+                <button id="btnToggleQRPersonalize" class="btn btn-secondary" style="font-size: 0.7rem; padding: 10px; margin: 0; min-height: unset; display: flex; align-items: center; justify-content: center; gap: 5px; height: 40px; line-height: 1;">
+                    🎨 PERSONALIZAR
+                </button>
+                <button id="btnDownloadQR" class="btn btn-success" style="font-size: 0.7rem; padding: 10px; margin: 0; min-height: unset; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: var(--gold); color: #000; border-color: var(--gold); font-weight: 800; height: 40px; line-height: 1;">
+                    📥 DESCARGAR
+                </button>
+            </div>
+
+            <!-- Panel de Personalización (Oculto por defecto) -->
+            <div id="qrPersonalizePanel" style="display: none; width: 100%; text-align: left; background: rgba(255,255,255,0.02); padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; border: 1px solid #1a1a1a;">
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                    <!-- Seccion de Textos -->
+                    <div>
+                        <h4 style="font-size: 0.7rem; color: var(--gold); margin: 0 0 10px 0; font-weight: 900; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">CONTENIDO Y TEXTOS</h4>
+                        
+                        <div style="margin-bottom: 12px;">
+                            <label style="font-size: 0.6rem; color: #aaa; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 5px;">Texto de Marca (Superior)</label>
+                            <input type="text" id="inputQRBrandText" class="input-pin" style="padding: 10px; font-size: 0.8rem; width: 100%; text-align: left;" placeholder="Ej: ✦ RULETA NEXO PREMIUM ✦">
+                        </div>
+
+                        <div style="margin-bottom: 12px;">
+                            <label style="font-size: 0.6rem; color: #aaa; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 5px;">Título Principal</label>
+                            <input type="text" id="inputQRTitle" class="input-pin" style="padding: 10px; font-size: 0.8rem; width: 100%; text-align: left;" placeholder="Ej: ESCANEA Y JUEGA">
+                        </div>
+
+                        <div style="margin-bottom: 12px;">
+                            <label style="font-size: 0.6rem; color: #aaa; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 5px;">Mensaje / Descripción</label>
+                            <textarea id="inputQRMessage" class="input-pin" style="padding: 10px; font-size: 0.8rem; width: 100%; height: 50px; resize: none; text-align: left;" placeholder="Ej: Sigue nuestras redes para más beneficios..."></textarea>
+                        </div>
+
+                        <div style="margin-bottom: 12px;">
+                            <label style="font-size: 0.6rem; color: #aaa; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 5px;">Texto del Pie (Footer)</label>
+                            <input type="text" id="inputQRFooterText" class="input-pin" style="padding: 10px; font-size: 0.8rem; width: 100%; text-align: left;" placeholder="Ej: SISTEMA DE RULETA PREMIUM">
+                        </div>
+
+                        <div style="margin-bottom: 12px;">
+                            <label style="font-size: 0.6rem; color: #aaa; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 5px;">Derechos de Autor (Copyright)</label>
+                            <input type="text" id="inputQRCopyrightText" class="input-pin" style="padding: 10px; font-size: 0.8rem; width: 100%; text-align: left;" placeholder="Ej: © TODOS LOS DERECHOS RESERVADOS.">
+                        </div>
+                    </div>
+
+                    <!-- Seccion de Colores -->
+                    <div>
+                        <h4 style="font-size: 0.7rem; color: var(--gold); margin: 0 0 10px 0; font-weight: 900; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">PALETA DE COLORES</h4>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <div>
+                                <label style="font-size: 0.55rem; color: #aaa; text-transform: uppercase; display: block; margin-bottom: 4px;">Fondo Tarjeta</label>
+                                <div style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.2); padding: 5px 8px; border-radius: 6px; border: 1px solid #222;">
+                                    <input type="color" id="inputQRBgColor" style="border: none; width: 28px; height: 24px; padding: 0; background: transparent; cursor: pointer;">
+                                    <span style="font-size: 0.65rem; color: #ccc;">Fondo</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label style="font-size: 0.55rem; color: #aaa; text-transform: uppercase; display: block; margin-bottom: 4px;">Líneas y Bordes</label>
+                                <div style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.2); padding: 5px 8px; border-radius: 6px; border: 1px solid #222;">
+                                    <input type="color" id="inputQRBorderColor" style="border: none; width: 28px; height: 24px; padding: 0; background: transparent; cursor: pointer;">
+                                    <span style="font-size: 0.65rem; color: #ccc;">Borde</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label style="font-size: 0.55rem; color: #aaa; text-transform: uppercase; display: block; margin-bottom: 4px;">Color Marca</label>
+                                <div style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.2); padding: 5px 8px; border-radius: 6px; border: 1px solid #222;">
+                                    <input type="color" id="inputQRBrandColor" style="border: none; width: 28px; height: 24px; padding: 0; background: transparent; cursor: pointer;">
+                                    <span style="font-size: 0.65rem; color: #ccc;">Marca</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label style="font-size: 0.55rem; color: #aaa; text-transform: uppercase; display: block; margin-bottom: 4px;">Color Título</label>
+                                <div style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.2); padding: 5px 8px; border-radius: 6px; border: 1px solid #222;">
+                                    <input type="color" id="inputQRTitleColor" style="border: none; width: 28px; height: 24px; padding: 0; background: transparent; cursor: pointer;">
+                                    <span style="font-size: 0.65rem; color: #ccc;">Título</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label style="font-size: 0.55rem; color: #aaa; text-transform: uppercase; display: block; margin-bottom: 4px;">Color Mensaje</label>
+                                <div style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.2); padding: 5px 8px; border-radius: 6px; border: 1px solid #222;">
+                                    <input type="color" id="inputQRMessageColor" style="border: none; width: 28px; height: 24px; padding: 0; background: transparent; cursor: pointer;">
+                                    <span style="font-size: 0.65rem; color: #ccc;">Mensaje</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label style="font-size: 0.55rem; color: #aaa; text-transform: uppercase; display: block; margin-bottom: 4px;">Color Pie</label>
+                                <div style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.2); padding: 5px 8px; border-radius: 6px; border: 1px solid #222;">
+                                    <input type="color" id="inputQRFooterColor" style="border: none; width: 28px; height: 24px; padding: 0; background: transparent; cursor: pointer;">
+                                    <span style="font-size: 0.65rem; color: #ccc;">Pie</span>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label style="font-size: 0.55rem; color: #aaa; text-transform: uppercase; display: block; margin-bottom: 4px;">Color Copyright</label>
+                                <div style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.2); padding: 5px 8px; border-radius: 6px; border: 1px solid #222;">
+                                    <input type="color" id="inputQRCopyrightColor" style="border: none; width: 28px; height: 24px; padding: 0; background: transparent; cursor: pointer;">
+                                    <span style="font-size: 0.65rem; color: #ccc;">Copyright</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Logotipo -->
+                    <div>
+                        <h4 style="font-size: 0.7rem; color: var(--gold); margin: 0 0 10px 0; font-weight: 900; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;">IMAGEN CENTRAL</h4>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <input type="file" id="inputQRLogo" accept="image/*" style="display: none;">
+                            <button id="btnUploadQRLogo" class="btn btn-secondary" style="font-size: 0.65rem; padding: 8px 12px; width: auto; margin: 0; min-height: unset;">SUBIR IMAGEN</button>
+                            <button id="btnRemoveQRLogo" class="btn btn-danger" style="font-size: 0.65rem; padding: 8px 12px; width: auto; margin: 0; min-height: unset; display: none;">ELIMINAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="btnCloseQR" class="btn btn-primary" style="width: 100%;">CERRAR</button>
+        </div>
+    </div>
+
+    <!-- Modal de Verificación de Seguridad -->
+    <div id="modalVerify" class="modal">
+        <div class="modal-content" style="padding: 40px; border: 1px solid var(--gold); max-width: 380px;">
+            <div style="font-size: 2.5rem; margin-bottom: 20px;">🛡️</div>
+            <h3 style="color: var(--gold); margin-top: 0; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">SEGURIDAD</h3>
+            <p style="color: #666; font-size: 0.75rem; margin-bottom: 30px;">Ingresa tu contraseña de administrador para proceder.</p>
+            
+            <div class="input-group">
+                <label>CONTRASEÑA DE ACCESO</label>
+                <input type="password" id="verifyPin" class="input-pin" placeholder="••••••••" style="text-align: center; letter-spacing: 8px;">
+                <span class="password-toggle" onclick="togglePassword('verifyPin', this)">Ver</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px;">
+                <button id="btnCancelVerify" class="btn btn-secondary">VOLVER</button>
+                <button id="btnConfirmVerify" class="btn btn-primary">VALIDAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Alerta Personalizada -->
+    <div id="modalCustomAlert" class="modal" style="z-index: 200000;">
+        <div class="modal-content" style="padding: 40px; border: 1px solid var(--gold); max-width: 380px;">
+            <div style="font-size: 2.5rem; margin-bottom: 20px;">⚠️</div>
+            <h3 id="customAlertTitle" style="color: var(--gold); margin-top: 0; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">MENSAJE</h3>
+            <p id="customAlertMessage" style="color: #ccc; font-size: 0.8rem; margin-bottom: 30px; line-height: 1.5;"></p>
+            <button id="btnCustomAlertOk" class="btn btn-primary" style="width: 100%;">ENTENDIDO</button>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación Personalizada -->
+    <div id="modalCustomConfirm" class="modal" style="z-index: 200000;">
+        <div class="modal-content" style="padding: 40px; border: 1px solid var(--gold); max-width: 380px;">
+            <div style="font-size: 2.5rem; margin-bottom: 20px;">❓</div>
+            <h3 style="color: var(--gold); margin-top: 0; font-weight: 900; text-transform: uppercase; letter-spacing: 2px;">CONFIRMACIÓN</h3>
+            <p id="customConfirmMessage" style="color: #ccc; font-size: 0.8rem; margin-bottom: 30px; line-height: 1.5;"></p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <button id="btnCustomConfirmCancel" class="btn btn-secondary">CANCELAR</button>
+                <button id="btnCustomConfirmAccept" class="btn btn-primary">CONFIRMAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Registro de Participante (Lead Capture) -->
+    <div id="modalRegistration" class="modal">
+        <div class="modal-content" style="padding: 40px; border: 1px solid var(--gold); overflow-y: auto;">
+            <h2 style="color: var(--gold); margin-top: 0; font-weight: 900; text-transform: uppercase;">REGISTRO</h2>
+            <p style="color: #666; font-size: 0.75rem; margin-bottom: 30px;">Ingresa tus datos para participar en el sorteo.</p>
+            
+            <div id="formRegistrationDynamic">
+                <!-- Se genera dinámicamente -->
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;">
+                <button id="btnCancelRegistration" class="btn btn-secondary">CANCELAR</button>
+                <button id="btnConfirmRegistration" class="btn btn-primary">CONFIRMAR Y GIRAR</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Menú / Panel de Control por Pestañas -->
+    <div id="modalConfig" class="modal">
+        <div class="modal-content">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="tab-admin">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2v20" /><path d="M2 12h20" /><path d="m19.071 4.929-14.14 14.142" /><path d="m4.929 4.929 14.142 14.142" /><circle cx="12" cy="12" r="2" fill="currentColor" /></svg>
+                    Sorteo
+                </button>
+                <button class="tab-btn" data-tab="tab-leads">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                    Leads
+                </button>
+                <button class="tab-btn" data-tab="tab-publicidad">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13V11z" /><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" /></svg>
+                    Publicidad
+                </button>
+                <button class="tab-btn" data-tab="tab-perfil">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                    Mi Perfil
+                </button>
+                <button class="tab-btn" data-tab="tab-sistema" id="btnTabSistema" style="background: rgba(212, 175, 55, 0.05); border: 1px solid rgba(212, 175, 55, 0.15); color: var(--gold);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>
+                    Sistema
+                </button>
+                <button class="tab-btn" data-tab="tab-estadisticas" id="btnTabEstadisticas" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); color: #10b981;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
+                    Estadísticas
+                </button>
+                <button class="tab-btn" data-tab="tab-superadmin" id="btnTabSuperAdmin" style="display: none; background: rgba(212, 175, 55, 0.1); border: 1px solid rgba(212, 175, 55, 0.3); color: var(--gold); font-weight: 900; letter-spacing: 0.5px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4L2 14v4zm10-11.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z" /></svg>
+                    SÚPER ADMIN
+                </button>
+            </div>
+
+            <div class="tabs-body">
+                <!-- Pestaña Sorteo -->
+                <div id="tab-admin" class="tab-pane active">
+                    <nexo-raffle-panel id="rafflePanel" style="display: block;"></nexo-raffle-panel>
+                    <div class="tab-pane-watermark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2v20" /><path d="M2 12h20" /><path d="m19.071 4.929-14.14 14.142" /><path d="m4.929 4.929 14.142 14.142" /><circle cx="12" cy="12" r="2" fill="currentColor" /></svg>
+                    </div>
+                </div>
+
+                <!-- Pestaña: Registro de Leads -->
+                <div id="tab-leads" class="tab-pane">
+                    <nexo-leads-panel id="leadsPanel" style="display: block;"></nexo-leads-panel>
+                    <div class="tab-pane-watermark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M22 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+                    </div>
+                </div>
+
+
+
+                <!-- Pestaña Publicidad (Extendida) -->
+                <div id="tab-publicidad" class="tab-pane">
+                    <!-- Cabecera de Sub-pestañas de Publicidad (100% Modular y Escalable) -->
+                    <div class="sub-tabs-header" id="publicidadSubtabsHeader" style="margin-bottom: 25px;">
+                        <button class="sub-tab-btn publicidad-sub-tab-btn active" data-subtab="subtab-ad-welcome">👋 Bienvenida</button>
+                        <button class="sub-tab-btn publicidad-sub-tab-btn" data-subtab="subtab-ad-banners">↕️ Banners</button>
+                        <button class="sub-tab-btn publicidad-sub-tab-btn" data-subtab="subtab-ad-video">⏱️ Video Ads</button>
+                        <button class="sub-tab-btn publicidad-sub-tab-btn" data-subtab="subtab-ad-side">🖼️ Lateral</button>
+                        <button class="sub-tab-btn publicidad-sub-tab-btn" data-subtab="subtab-ad-stream">📺 Streaming</button>
+                        <button class="sub-tab-btn publicidad-sub-tab-btn" data-subtab="subtab-ad-qr">🔗 Pop-up QR</button>
+                        <button class="sub-tab-btn publicidad-sub-tab-btn" data-subtab="subtab-ad-embed">🎡 Modo Embebido</button>
+                    </div>
+
+                    <!-- 1. Anuncio de Bienvenida -->
+                    <div id="subtab-ad-welcome" class="sub-tab-pane publicidad-sub-tab-pane active">
+                        <div class="config-section" style="border: 1px solid rgba(212,175,55,0.15); background: rgba(0,0,0,0.4); border-radius: 20px; padding: 20px; margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--gold); letter-spacing: 0.5px;">Anuncio de Bienvenida</h4>
+                                <div id="adHomeActiveBadge"></div>
+                            </div>
+                            <p style="font-size: 0.7rem; color: #888; margin-bottom: 15px;">Configura un modal publicitario de impacto inmediato.</p>
+                            
+                            <div class="sub-tabs-header">
+                                <button class="sub-tab-btn ad-type-btn active" data-type="text" style="font-size:0.5rem;">TEXTO</button>
+                                <button class="sub-tab-btn ad-type-btn" data-type="text-image" style="font-size:0.5rem;">TEXTO+IMG</button>
+                                <button class="sub-tab-btn ad-type-btn" data-type="image" style="font-size:0.5rem;">IMAGEN</button>
+                                <button class="sub-tab-btn ad-type-btn" data-type="video" style="font-size:0.5rem;">VIDEO</button>
+                                <button class="sub-tab-btn ad-type-btn" data-type="text-video" style="font-size:0.5rem;">TEXTO+VID</button>
+                            </div>
+
+                            <div id="adHomeTextInputs" style="display:none; flex-direction:column; gap:10px; margin-bottom:15px;">
+                                <input type="text" id="inputAdHomeTitle" class="input-pin" placeholder="Título del anuncio..." style="padding:12px; font-size:0.8rem;">
+                                <textarea id="inputAdHomeBody" class="input-pin" placeholder="Mensaje del anuncio..." style="padding:12px; font-size:0.8rem; height:80px; resize:none;"></textarea>
+                            </div>
+
+                            <!-- Configuración de Imágenes (Modificado para Carrusel) -->
+                            <div id="adHomeImageInput" style="display:none; margin-bottom:15px;">
+                                <div class="toggle-container" style="margin-bottom: 15px;">
+                                    <span style="font-size: 0.65rem; color: #fff; font-weight: 800; text-transform: uppercase;">ACTIVAR CARRUSEL DE IMÁGENES</span>
+                                    <input type="checkbox" id="chkAdHomeCarousel" style="width:20px; height:20px;">
+                                </div>
+
+                                <div id="carouselSettings" style="display:none; margin-bottom:15px;">
+                                    <label style="font-size: 0.6rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">TIEMPO TRANSICIÓN (SEGUNDOS)</label>
+                                    <input type="number" id="inputAdHomeTransition" class="input-pin" style="padding: 10px; font-size: 0.8rem; margin-top:5px;" min="1" value="3">
+                                </div>
+
+                                <div class="custom-row">
+                                    <span class="custom-label">Gestionar Galería</span>
+                                    <div class="custom-controls">
+                                        <button id="btnAdHomeAddImg" class="btn btn-secondary" style="padding:8px; font-size:0.55rem;">AÑADIR IMAGEN/ES</button>
+                                        <input type="file" id="inputAdHomeFiles" accept="image/*" multiple style="display:none;">
+                                    </div>
+                                </div>
+                                
+                                <div id="adHomeGalleryList" class="carousel-gallery">
+                                    <!-- Se llena dinámicamente -->
+                                </div>
+                            </div>
+
+                            <!-- Configuración de Video -->
+                            <div id="adHomeVideoInput" style="display:none; margin-bottom:15px;">
+                                 <div class="custom-row">
+                                    <span class="custom-label">Archivo de Video</span>
+                                    <div class="custom-controls">
+                                        <button id="btnAdHomeAddVideo" class="btn btn-secondary" style="padding:8px; font-size:0.55rem;">SUBIR VIDEO (.MP4)</button>
+                                        <input type="file" id="inputAdHomeVideoFile" accept="video/mp4,video/webm" style="display:none;">
+                                    </div>
+                                </div>
+                                <div id="videoPreviewContainer" style="margin-top:10px; display:none;">
+                                    <video id="adminVideoPreview" muted autoplay loop></video>
+                                    <button id="btnRemoveAdVideo" class="btn btn-danger" style="width:100%; font-size:0.6rem; margin-top:10px;">ELIMINAR VIDEO</button>
+                                </div>
+                                <div class="toggle-container" style="margin-top:15px;">
+                                    <span style="font-size: 0.65rem; color: #fff; font-weight: 800; text-transform: uppercase;">MUTEAR AUDIO</span>
+                                    <input type="checkbox" id="chkAdVideoMute" style="width:20px; height:20px;">
+                                </div>
+                                <div class="toggle-container">
+                                    <span style="font-size: 0.65rem; color: #fff; font-weight: 800; text-transform: uppercase;">REPETICIÓN (LOOP)</span>
+                                    <input type="checkbox" id="chkAdVideoLoop" style="width:20px; height:20px;">
+                                </div>
+                            </div>
+
+                            <!-- Activación por Inactividad -->
+                            <div style="margin-top: 20px; margin-bottom: 20px; border-top: 1px solid #222; padding-top: 15px;">
+                                <span style="font-size: 0.7rem; color: var(--gold); font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 8px; letter-spacing: 0.5px;">ACTIVACIÓN POR INACTIVIDAD</span>
+                                <p style="font-size: 0.65rem; color: #777; margin-bottom: 10px;">Muestra el anuncio automáticamente tras un periodo sin interacción.</p>
+                                
+                                <div class="toggle-container" style="margin-bottom: 10px;">
+                                    <span style="font-size: 0.65rem; color: #fff; font-weight: 800; text-transform: uppercase;">ACTIVAR AUTO-LANZAMIENTO</span>
+                                    <input type="checkbox" id="chkAdInactivity" style="width:20px; height:20px;">
+                                </div>
+
+                                <div style="display: flex; flex-direction: column; gap: 5px;">
+                                    <label style="font-size: 0.6rem; color: var(--gold); font-weight: 800; text-transform: uppercase;">TIEMPO DE ESPERA (SEGUNDOS)</label>
+                                    <input type="number" id="inputAdInactivitySeconds" class="input-pin" style="padding: 12px; font-size: 0.9rem;" min="5" value="60">
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 10px; margin-bottom: 10px; width: 100%;">
+                                <button id="btnPreviewAdHome" class="btn btn-secondary" style="flex: 1; font-size: 0.6rem; padding: 12px;">VISTA PREVIA</button>
+                                <button id="btnPublishAdHome" class="btn btn-secondary" style="flex: 1; font-size: 0.6rem; padding: 12px;">PANTALLA LOCAL</button>
+                            </div>
+                            <button id="btnLaunchAdHome" class="btn btn-primary" style="width: 100%; font-size: 0.65rem; font-weight: 900; background: var(--gold); color: #000; padding: 12px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.1);">📢 Lanzar Publicidad</button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Banners Dinámicos (Display Ads) -->
+                    <div id="subtab-ad-banners" class="sub-tab-pane publicidad-sub-tab-pane" style="display: none;">
+                        <div class="config-section" style="border: 1px solid rgba(212,175,55,0.15); background: rgba(0,0,0,0.4); border-radius: 20px; padding: 20px; margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--gold); letter-spacing: 0.5px;">Banners Dinámicos (Display Ads)</h4>
+                                <div id="adBannersActiveBadge"></div>
+                            </div>
+                            <p style="font-size: 0.7rem; color: #888; margin-bottom: 15px;">Sorteo de banners publicitarios superiores o inferiores de forma rotativa.</p>
+                            
+                            <div class="toggle-container" style="margin-bottom:15px;">
+                                <span style="font-size: 0.65rem; color: #fff; font-weight: 800; text-transform: uppercase;">HABILITAR BANNERS DINÁMICOS</span>
+                                <input type="checkbox" id="chkAdBannersEnabled" style="width:20px; height:20px;">
+                            </div>
+
+                            <div id="adBannersSettings" style="display:none; margin-top:15px; border-top: 1px solid #1a1a1a; padding-top:15px;">
+                                <div class="custom-row">
+                                    <span class="custom-label">Gestionar Banners</span>
+                                    <div class="custom-controls">
+                                        <button id="btnAdBannersAdd" class="btn btn-secondary" style="padding:8px; font-size:0.55rem;">AÑADIR IMG</button>
+                                        <button id="btnAdBannersAddVideo" class="btn btn-secondary" style="padding:8px; font-size:0.55rem;">AÑADIR VID</button>
+                                        <input type="file" id="inputAdBannersFiles" accept="image/*" multiple style="display:none;">
+                                        <input type="file" id="inputAdBannersVideoFile" accept="video/mp4,video/webm" style="display:none;">
+                                    </div>
+                                </div>
+                                <div id="adBannersList" class="carousel-gallery"></div>
+                                
+                                <div style="margin-top:15px; display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                                    <div class="input-group" style="margin-bottom:0;">
+                                        <label>POSICIÓN</label>
+                                        <select id="selectAdBannersPos" class="input-pin" style="padding:10px; font-size:0.75rem;">
+                                            <option value="bottom">INFERIOR</option>
+                                            <option value="top">SUPERIOR</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group" style="margin-bottom:0;">
+                                        <label>TAMAÑO</label>
+                                        <select id="selectAdBannersSize" class="input-pin" style="padding:10px; font-size:0.75rem;">
+                                            <option value="compact">COMPACTO</option>
+                                            <option value="standard">NORMAL</option>
+                                            <option value="large">EXPANDIDO</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div style="margin-top:15px; display:flex; flex-direction:column; gap:10px;">
+                                    <div class="toggle-container" style="background:#0a0a0a; border-color:#333; margin-bottom: 5px;">
+                                        <span style="font-size: 0.6rem; color: #fff; font-weight: 800; text-transform: uppercase;">OCULTAR AL GIRAR</span>
+                                        <input type="checkbox" id="chkAdBannersAutoHide" style="width:20px; height:20px;">
+                                    </div>
+                                    <div class="toggle-container" style="background:#0a0a0a; border-color:#333; margin-bottom: 5px;">
+                                        <span style="font-size: 0.6rem; color: #fff; font-weight: 800; text-transform: uppercase;">MUTEAR AUDIO (VIDEO)</span>
+                                        <input type="checkbox" id="chkAdBannersVideoMute" style="width:18px; height:18px;">
+                                    </div>
+                                    <div class="toggle-container" style="background:#0a0a0a; border-color:#333; margin-bottom: 10px;">
+                                        <span style="font-size: 0.6rem; color: #fff; font-weight: 800; text-transform: uppercase;">REPETICIÓN (LOOP)</span>
+                                        <input type="checkbox" id="chkAdBannersVideoLoop" style="width:18px; height:18px;">
+                                    </div>
+                                    
+                                    <div style="margin-bottom: 15px;">
+                                        <label style="font-size:0.55rem; color:var(--gold); font-weight:800; text-transform:uppercase;">INTERVALO (SEG)</label>
+                                        <input type="number" id="inputAdBannersSeconds" class="input-pin" style="padding:10px; font-size:0.8rem; margin-top:5px;" value="10" min="5">
+                                    </div>
+                                    <button id="btnAdBannersPreview" class="btn btn-secondary" style="width:100%; font-size:0.6rem; margin-bottom: 15px;">VISTA PREVIA</button>
+                                </div>
+                            </div>
+                            <button id="btnLaunchAdBanners" class="btn btn-primary" style="width: 100%; font-size: 0.65rem; font-weight: 900; background: var(--gold); color: #000; padding: 12px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.1);">📢 Lanzar Publicidad</button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Video Ads por Frecuencia -->
+                    <div id="subtab-ad-video" class="sub-tab-pane publicidad-sub-tab-pane" style="display: none;">
+                        <div class="config-section" style="border: 1px solid rgba(212,175,55,0.15); background: rgba(0,0,0,0.4); border-radius: 20px; padding: 20px; margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--gold); letter-spacing: 0.5px;">Video Ads por Frecuencia</h4>
+                                <div id="adVideoAdsActiveBadge"></div>
+                            </div>
+                            <p style="font-size: 0.7rem; color: #888; margin-bottom: 15px;">Reproduce un video publicitario automáticamente cada cierta cantidad de giros.</p>
+                            
+                            <div class="toggle-container" style="margin-bottom:15px;">
+                                <span style="font-size: 0.65rem; color: #fff; font-weight: 800; text-transform: uppercase;">HABILITAR VIDEO ADS</span>
+                                <input type="checkbox" id="chkAdVideoAdsEnabled" style="width:20px; height:20px;">
+                            </div>
+
+                            <div id="adVideoAdsSettings" style="display:none; margin-top:15px; border-top: 1px solid #1a1a1a; padding-top:15px;">
+                                <div class="custom-row" style="margin-bottom:15px;">
+                                    <span class="custom-label">Archivo de Video</span>
+                                    <div class="custom-controls">
+                                        <button id="btnAdFrequencyAddVideo" class="btn btn-secondary" style="padding:8px; font-size:0.55rem;">SUBIR VIDEO (.MP4)</button>
+                                        <input type="file" id="inputAdFrequencyVideoFile" accept="video/mp4,video/webm" style="display:none;">
+                                    </div>
+                                </div>
+                                <div id="frequencyVideoPreviewContainer" style="margin-bottom:15px; display:none;">
+                                    <video id="adminFrequencyVideoPreview" muted autoplay loop></video>
+                                    <button id="btnRemoveAdFrequencyVideo" class="btn btn-danger" style="width:100%; font-size:0.6rem; margin-top:10px;">ELIMINAR VIDEO DE FRECUENCIA</button>
+                                </div>
+
+                                <div style="display:flex; flex-direction:column; gap:10px; margin-bottom: 15px;">
+                                    <div>
+                                        <label style="font-size:0.55rem; color:var(--gold); font-weight:800; text-transform:uppercase;">FRECUENCIA (CADA X GIROS)</label>
+                                        <input type="number" id="inputAdVideoAdsFreq" class="input-pin" style="padding:10px; font-size:0.8rem; margin-top:5px;" value="5" min="1">
+                                    </div>
+                                    <button id="btnAdFrequencyPreview" class="btn btn-secondary" style="width:100%; font-size:0.6rem;">VISTA PREVIA</button>
+                                </div>
+                            </div>
+                            <button id="btnLaunchAdFrequency" class="btn btn-primary" style="width: 100%; font-size: 0.65rem; font-weight: 900; background: var(--gold); color: #000; padding: 12px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.1);">📢 Lanzar Publicidad</button>
+                        </div>
+                    </div>
+
+                    <!-- 4. Publicidad Lateral Persistente -->
+                    <div id="subtab-ad-side" class="sub-tab-pane publicidad-sub-tab-pane" style="display: none;">
+                        <div class="config-section" style="border: 1px solid rgba(212,175,55,0.15); background: rgba(0,0,0,0.4); border-radius: 20px; padding: 20px; margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--gold); letter-spacing: 0.5px;">Publicidad Lateral Persistente</h4>
+                                <div id="adSidePersistentActiveBadge"></div>
+                            </div>
+                            <p style="font-size: 0.7rem; color: #888; margin-bottom: 15px;">Muestra una galería de imágenes o videos a un lado de la ruleta de forma permanente.</p>
+                            
+                            <div class="toggle-container" style="margin-bottom:15px;">
+                                <span style="font-size: 0.65rem; color: #fff; font-weight: 800; text-transform: uppercase;">HABILITAR PUBLICIDAD LATERAL</span>
+                                <input type="checkbox" id="chkAdSidePersistentEnabled" style="width:20px; height:20px;">
+                            </div>
+
+                            <div id="adSidePersistentSettings" style="display:none; margin-top:15px; border-top: 1px solid #1a1a1a; padding-top:15px;">
+                                <div class="custom-row" style="margin-bottom:15px;">
+                                    <span class="custom-label">Gestionar Galería Lateral</span>
+                                    <div class="custom-controls">
+                                        <button id="btnAdSidePersistentAdd" class="btn btn-secondary" style="padding:8px; font-size:0.55rem;">AÑADIR IMG</button>
+                                        <button id="btnAdSidePersistentAddVideo" class="btn btn-secondary" style="padding:8px; font-size:0.55rem;">AÑADIR VID</button>
+                                        <input type="file" id="inputAdSidePersistentFile" accept="image/*" multiple style="display:none;">
+                                        <input type="file" id="inputAdSidePersistentVideoFile" accept="video/mp4,video/webm" style="display:none;">
+                                    </div>
+                                </div>
+                                <div id="adSidePersistentList" class="carousel-gallery"></div>
+
+                                <div id="sideAdPreviewContainer" style="margin-bottom:15px; display:none; background:#000; border-radius:10px; overflow:hidden; border:1px solid #333;">
+                                    <div id="sideAdPreviewContent"></div>
+                                </div>
+
+                                <div style="margin-bottom:15px; display:flex; flex-direction:column; gap:8px;">
+                                    <div class="toggle-container" style="background:#0a0a0a; border-color:#333; padding: 12px 15px; margin-bottom: 0;">
+                                        <span style="font-size: 0.6rem; color: #fff; font-weight: 800; text-transform: uppercase;">MUTEAR AUDIO (VIDEO)</span>
+                                        <input type="checkbox" id="chkAdSidePersistentVideoMute" style="width:18px; height:18px;">
+                                    </div>
+                                    <div class="toggle-container" style="background:#0a0a0a; border-color:#333; padding: 12px 15px; margin-bottom: 0;">
+                                        <span style="font-size: 0.6rem; color: #fff; font-weight: 800; text-transform: uppercase;">REPETICIÓN (LOOP)</span>
+                                        <input type="checkbox" id="chkAdSidePersistentVideoLoop" style="width:18px; height:18px;">
+                                    </div>
+                                </div>
+
+                                <div style="margin-bottom:15px; display:grid; grid-template-columns: 1fr 1fr; gap:10px;">
+                                    <div class="input-group" style="margin-bottom:0;">
+                                        <label>POSICIÓN</label>
+                                        <select id="selectAdSidePersistentPos" class="input-pin" style="padding:10px; font-size:0.75rem;">
+                                            <option value="left">IZQUIERDA</option>
+                                            <option value="right">DERECHA</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group" style="margin-bottom:0;">
+                                        <label>INTERVALO (SEG)</label>
+                                        <input type="number" id="inputAdSidePersistentInterval" class="input-pin" style="padding:10px; font-size:0.8rem;" value="10" min="5">
+                                    </div>
+                                </div>
+                            </div>
+                            <button id="btnLaunchAdSidePersistent" class="btn btn-primary" style="width: 100%; font-size: 0.65rem; font-weight: 900; background: var(--gold); color: #000; padding: 12px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.1); margin-top: 15px;">📢 Lanzar Publicidad</button>
+                        </div>
+                    </div>
+
+                    <!-- 5. Transmisión en Vivo (Streaming) -->
+                    <div id="subtab-ad-stream" class="sub-tab-pane publicidad-sub-tab-pane" style="display: none;">
+                        <div class="config-section" style="border: 1px solid rgba(212,175,55,0.15); background: rgba(0,0,0,0.4); border-radius: 20px; padding: 20px; margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--gold); letter-spacing: 0.5px;">Transmisión en Vivo (Streaming)</h4>
+                                <div id="adStreamingActiveBadge"></div>
+                            </div>
+                            <p style="font-size: 0.7rem; color: #888; margin-bottom: 15px;">Integra una transmisión en vivo de YouTube, Twitch u otra plataforma al lado de la ruleta.</p>
+                            
+                            <div class="toggle-container" style="margin-bottom:15px;">
+                                <span style="font-size: 0.65rem; color: #fff; font-weight: 800; text-transform: uppercase;">HABILITAR STREAMING LATERAL</span>
+                                <input type="checkbox" id="chkAdStreamingEnabled" style="width:20px; height:20px;">
+                            </div>
+
+                            <div id="adStreamingSettings" style="display:none; margin-top:15px; border-top: 1px solid #1a1a1a; padding-top:15px;">
+                                <div class="input-group">
+                                    <label>URL DE TRANSMISIÓN O CÓDIGO EMBED</label>
+                                    <textarea id="inputAdStreamingUrl" class="input-pin" style="padding:10px; font-size:0.8rem; height:80px; resize:vertical; font-family:'JetBrains Mono', monospace;" placeholder="Ej: https://www.youtube.com/watch?v=... o pega el código &lt;iframe&gt; completo"></textarea>
+                                </div>
+
+                                <div style="margin-bottom:15px; display:flex; flex-direction:column; gap:8px;">
+                                    <div class="toggle-container" style="background:#0a0a0a; border-color:#333; padding: 12px 15px; margin-bottom: 0;">
+                                        <span style="font-size: 0.6rem; color: #fff; font-weight: 800; text-transform: uppercase;">MUTEAR AUDIO (VIDEO)</span>
+                                        <input type="checkbox" id="chkAdStreamingVideoMute" style="width:18px; height:18px;">
+                                    </div>
+                                    <div class="toggle-container" style="background:#0a0a0a; border-color:#333; padding: 12px 15px; margin-bottom: 0;">
+                                        <span style="font-size: 0.6rem; color: #fff; font-weight: 800; text-transform: uppercase;">REPETICIÓN (LOOP)</span>
+                                        <input type="checkbox" id="chkAdStreamingVideoLoop" style="width:18px; height:18px;">
+                                    </div>
+                                </div>
+
+                                <div class="input-group" style="margin-bottom:15px;">
+                                    <label>POSICIÓN</label>
+                                    <select id="selectAdStreamingPos" class="input-pin" style="padding:10px; font-size:0.75rem;">
+                                        <option value="left">IZQUIERDA</option>
+                                        <option value="right">DERECHA</option>
+                                    </select>
+                                </div>
+                                
+                                <button id="btnAdStreamingPreview" class="btn btn-secondary" style="width:100%; font-size:0.6rem; margin-top:5px;">PROBAR TRANSMISIÓN</button>
+                            </div>
+                            <button id="btnLaunchAdStreaming" class="btn btn-primary" style="width: 100%; font-size: 0.65rem; font-weight: 900; background: var(--gold); color: #000; padding: 12px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.1); margin-top: 15px;">📢 Lanzar Streaming</button>
+                        </div>
+                    </div>
+
+                    <!-- 6. Pop-up de Conversión QR -->
+                    <div id="subtab-ad-qr" class="sub-tab-pane publicidad-sub-tab-pane" style="display: none;">
+                        <div class="config-section" style="border: 1px solid rgba(212,175,55,0.15); background: rgba(0,0,0,0.4); border-radius: 20px; padding: 20px; margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--gold); letter-spacing: 0.5px;">Pop-up de Conversión QR</h4>
+                                <div id="adQrActiveBadge"></div>
+                            </div>
+                            <p style="font-size: 0.7rem; color: #888; margin-bottom: 15px;">Configura un pop-up que muestra un código QR para redireccionar a los usuarios.</p>
+                            
+                            <div class="toggle-container" style="margin-bottom:15px;">
+                                <span style="font-size: 0.65rem; color: #fff; font-weight: 800; text-transform: uppercase;">HABILITAR POP-UP QR</span>
+                                <input type="checkbox" id="chkAdQrEnabled" style="width:20px; height:20px;">
+                            </div>
+
+                            <div id="adQrSettings" style="display:none; margin-top:15px; border-top: 1px solid #1a1a1a; padding-top:15px; margin-bottom: 15px;">
+                                <div class="input-group"><label>URL DE DESTINO</label><input type="text" id="inputAdQrUrl" class="input-pin" style="padding:10px; font-size:0.8rem;" placeholder="https://instagram.com/tuempresa"></div>
+                                <div class="input-group"><label>TÍTULO POP-UP</label><input type="text" id="inputAdQrTitle" class="input-pin" style="padding:10px; font-size:0.8rem;" placeholder="¡SÍGUENOS Y GANA MÁS!"></div>
+                                <div class="input-group" style="margin-bottom:0;"><label>MENSAJE</label><textarea id="inputAdQrMsg" class="input-pin" style="padding:10px; font-size:0.8rem; height:60px; resize:none;" placeholder="Escanea para obtener beneficios..."></textarea></div>
+                                <button id="btnAdQrPreview" class="btn btn-secondary" style="width:100%; font-size:0.6rem; margin-top:10px;">VISTA PREVIA</button>
+                            </div>
+                            <button id="btnLaunchAdQr" class="btn btn-primary" style="width: 100%; font-size: 0.65rem; font-weight: 900; background: var(--gold); color: #000; padding: 12px; text-transform: uppercase; border: 1px solid rgba(255,255,255,0.1);">📢 Lanzar Publicidad</button>
+                        </div>
+                    </div>
+
+                    <!-- 7. Modo Embebido (Widget / Iframe) -->
+                    <div id="subtab-ad-embed" class="sub-tab-pane publicidad-sub-tab-pane" style="display: none;">
+                        <div class="config-section" style="border: 1px solid rgba(212,175,55,0.15); background: rgba(0,0,0,0.4); border-radius: 20px; padding: 20px; margin-bottom: 25px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--gold); letter-spacing: 0.5px;">🎡 MODO EMBEBIDO (WIDGET / IFRAME)</h4>
+                                <span style="background: rgba(0, 255, 127, 0.15); color: #00ff7f; padding: 2px 6px; border-radius: 4px; font-size: 0.5rem; font-weight: 900;">ACTIVO v1.0</span>
+                            </div>
+                            <p style="font-size: 0.7rem; color: #888; margin-bottom: 15px;">
+                                Integra la ruleta directamente en tu página web, landing page o aplicación publicitaria. Se adaptará automáticamente y mostrará solo el juego activo con su título, subtítulo y premios, respetando el estado de activación del juego.
+                            </p>
+
+                            <!-- Activar Widget Embebible -->
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                <div style="display: flex; flex-direction: column; text-align: left; gap: 2px;">
+                                    <span style="font-size: 0.7rem; color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">🎡 Activar Widget Embebible</span>
+                                    <span style="font-size: 0.55rem; color: #666;">Permite cargar la ruleta externamente.</span>
+                                </div>
+                                <label class="nexo-switch">
+                                    <input type="checkbox" id="chkEmbedWidgetEnabled" style="width:20px; height:20px;">
+                                    <span class="nexo-slider"></span>
+                                </label>
+                            </div>
+
+                            <div id="divEmbedSettingsContainer" style="display: none; background: rgba(255,255,255,0.02); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); margin-top: 15px;">
+                                <!-- Mostrar Título -->
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                                    <span style="font-size: 0.7rem; color: #ccc; font-weight: 800; text-transform: uppercase;">Mostrar Título en Widget</span>
+                                    <label class="nexo-switch">
+                                        <input type="checkbox" id="chkEmbedShowTitle" style="width:20px; height:20px;">
+                                        <span class="nexo-slider"></span>
+                                    </label>
+                                </div>
+
+                                <!-- Mostrar Subtítulo -->
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px;">
+                                    <span style="font-size: 0.7rem; color: #ccc; font-weight: 800; text-transform: uppercase;">Mostrar Subtítulo en Widget</span>
+                                    <label class="nexo-switch">
+                                        <input type="checkbox" id="chkEmbedShowSubtitle" style="width:20px; height:20px;">
+                                        <span class="nexo-slider"></span>
+                                    </label>
+                                </div>
+
+                                <!-- Personalizar Código / Enlace -->
+                                <div style="margin-bottom: 15px;">
+                                    <label style="font-size: 0.6rem; color: var(--gold); font-weight: 800; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Código HTML Iframe</label>
+                                    <div style="display: flex; gap: 8px;">
+                                        <input type="text" id="inputEmbedIframeCode" readonly class="input-pin" style="padding: 10px 12px; font-size: 0.75rem; flex: 1; text-align: left; background: #000; border: 1px solid rgba(212,175,55,0.2); color: #fff; border-radius: 6px;">
+                                        <button id="btnCopyEmbedIframeCode" class="btn btn-secondary" style="font-size: 0.6rem; padding: 0 15px; height: auto;">COPIAR</button>
+                                    </div>
+                                </div>
+
+                                <div style="margin-bottom: 10px;">
+                                    <label style="font-size: 0.6rem; color: var(--gold); font-weight: 800; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Enlace Directo</label>
+                                    <div style="display: flex; gap: 8px;">
+                                        <input type="text" id="inputEmbedDirectUrl" readonly class="input-pin" style="padding: 10px 12px; font-size: 0.75rem; flex: 1; text-align: left; background: #000; border: 1px solid rgba(212,175,55,0.2); color: #fff; border-radius: 6px;">
+                                        <button id="btnCopyEmbedDirectUrl" class="btn btn-secondary" style="font-size: 0.6rem; padding: 0 15px; height: auto;">COPIAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane-watermark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 13V11z" /><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" /></svg>
+                    </div>
+                </div>
+
+                <!-- Pestaña Estadísticas Generales (KPIs y Analítica de Sorteo) -->
+                <div id="tab-estadisticas" class="tab-pane">
+                    <div class="config-section" style="border: 1px solid rgba(16,185,129,0.15); background: rgba(0,0,0,0.4); border-radius: 20px; padding: 25px; margin-bottom: 25px;">
+                        <nexo-game-stats mode="general"></nexo-game-stats>
+                    </div>
+                    <div class="tab-pane-watermark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg>
+                    </div>
+                </div>
+
+                <!-- Pestaña Súper Administrador (Licencias en línea) -->
+                <div id="tab-superadmin" class="tab-pane">
+                    <nexo-super-admin></nexo-super-admin>
+                    <div class="tab-pane-watermark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4L2 14v4zm10-11.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0z" /></svg>
+                    </div>
+                </div> <!-- Fin de Pestaña Súper Administrador -->
+
+                <!-- Pestaña Mi Perfil (Ahora contiene Mi Marca) -->
+                <div id="tab-perfil" class="tab-pane">
+                    <!-- Navegación de Sub-ajustes de Perfil -->
+                    <div class="sub-tabs-header">
+                        <button class="sub-tab-btn active" data-subtab="subtab-cuenta">Cuenta</button>
+                        <button class="sub-tab-btn" data-subtab="subtab-personalizacion">Personalización</button>
+                    </div>
+
+                    <!-- Sub-pestaña: Cuenta -->
+                    <div id="subtab-cuenta" class="sub-tab-pane active">
+                        
+                        <!-- NUEVO: Centro de Suscripciones Ruleta Nexo Premium -->
+                        <div class="config-section">
+                            <h4>Centro de Suscripciones Ruleta Nexo Premium</h4>
+                            <div id="subscriptionStatusCard" class="subscription-card">
+                                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                                    <div>
+                                        <p id="licenseTierDisplay" style="color: var(--gold); font-weight: 900; margin: 0; font-size: 1.1rem; letter-spacing: 1px;">CARGANDO...</p>
+                                        <span id="licenseTierBadge" class="tier-badge">SISTEMA</span>
+                                    </div>
+                                    <div style="text-align: right;">
+                                        <p style="color: #444; font-size: 0.5rem; margin: 0; font-weight: 900; text-transform: uppercase;">Expiración</p>
+                                        <p id="licenseExpiryDisplay" style="color: #fff; font-weight: 900; margin: 0; font-size: 0.8rem;">--/--/----</p>
+                                    </div>
+                                </div>
+                                <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.05);">
+                                    <p style="font-size: 0.6rem; color: #666; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Activar Nueva Licencia</p>
+                                    <div style="display: flex; gap: 8px;">
+                                        <input type="text" id="licenseKeyInput" class="input-pin" style="flex: 1; padding: 12px; font-size: 0.8rem;" placeholder="XXXX-XXXX-XXXX-XXXX">
+                                        <button id="btnActivateLicense" class="btn btn-primary" style="padding: 12px 20px; font-size: 0.6rem;">ACTIVAR</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- NUEVO: Identidad de Dispositivo -->
+                            <div style="background: #000; padding: 15px; border-radius: 15px; border: 1px solid #222; margin-top: 15px; display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <p style="color: #444; font-size: 0.5rem; margin: 0; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">ID DE DISPOSITIVO (HARDWARE)</p>
+                                    <p id="nexoDeviceIdDisplay" style="color: var(--gold); font-family: monospace; font-size: 0.9rem; font-weight: 900; margin: 3px 0 0 0;">NX-0000-0000</p>
+                                </div>
+                                <button id="btnCopyDeviceId" class="btn btn-secondary" style="padding: 8px 12px; font-size: 0.55rem; border-color: #333;">COPIAR ID</button>
+                            </div>
+                        </div>
+
+                        <!-- NUEVO: Seguridad del Menú -->
+                        <div class="config-section">
+                            <h4>Seguridad del Sistema</h4>
+                            <div class="toggle-container">
+                                <span style="font-size: 0.65rem; color: #fff; font-weight: 800; text-transform: uppercase;">SOLICITAR PIN PARA ENTRAR AL MENÚ</span>
+                                <input type="checkbox" id="chkMenuSecurity" style="width:20px; height:20px;">
+                            </div>
+                            <p style="font-size: 0.6rem; color: #555; margin-top: 8px;">Si se desactiva, el panel de administración se abrirá sin solicitar PIN. Use esta opción solo en entornos de confianza.</p>
+                        </div>
+
+                        <div class="config-section">
+                            <h4>Cuenta Empresarial</h4>
+                            <div style="background: #000; padding: 20px; border-radius: 20px; border: 1px solid #222; margin-bottom: 20px;">
+                                <p id="profileNameDisplay" style="color: var(--gold); font-weight: 900; margin: 0 0 5px 0;">--</p>
+                                <p id="profileEmailDisplay" style="color: #555; font-size: 0.9rem; margin: 0;">--</p>
+                                <div id="profileTierBadge" style="display: inline-block; padding: 4px 10px; border-radius: 5px; font-size: 0.55rem; font-weight: 900; margin-top: 15px;">--</div>
+                            </div>
+                        </div>
+
+                        <div class="config-section">
+                            <h4>Ventas y Soporte Técnico</h4>
+                            <div style="border: 1px dashed #333; padding: 25px; border-radius: 20px; text-align: center;">
+                                <p style="color: #444; font-size: 0.75rem; margin: 0; margin-bottom: 15px;">Para asistencia personalizada o integración de nuevas funciones, contacte con NEXO NETWORK.</p>
+                                <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 15px; margin-top: 5px;">
+                                    <p style="color: var(--gold); font-weight: 900; margin: 0; font-size: 1.1rem; letter-spacing: 1px;">Nexo Network Ec</p>
+                                    <p style="color: #fff; font-size: 0.95rem; margin: 5px 0;">nexonetwork.ec@gmail.com</p>
+                                    <p style="color: #fff; font-size: 0.95rem; margin: 0;">+593 0998166596</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NUEVO: Cerrar Sesión Segura -->
+                        <div class="config-section" style="margin-top: 15px;">
+                            <h4>Sesión de Administrador</h4>
+                            <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 15px; border: 1px solid rgba(255,255,255,0.05);">
+                                <p style="font-size: 0.65rem; color: #888; margin: 0 0 12px 0;">Cierra la sesión administrativa de forma segura para evitar accesos no autorizados en este dispositivo.</p>
+                                <button id="btnLogOut" class="btn btn-danger" style="width:100%; font-size: 0.7rem; border: 1px solid rgba(255, 77, 77, 0.3); padding: 12px 20px;">CERRAR SESIÓN SEGURA</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sub-pestaña: Personalización -->
+                    <div id="subtab-personalizacion" class="sub-tab-pane">
+                        <!-- SECCIÓN UNIFICADA: PERSONALIZACIÓN DE MARCA Y ESTILO -->
+                        <div class="config-section" style="border: 1px solid rgba(212,175,55,0.2); background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(20,20,20,0.6) 100%); border-radius: 24px; padding: 25px; margin-bottom: 25px; backdrop-filter: blur(8px); box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
+                            
+                            <!-- Cabecera de la Sección Unificada -->
+                            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px;">
+                                <span style="font-size: 1.4rem;">🎨</span>
+                                <div>
+                                    <h4 style="margin: 0; font-size: 1.05rem; color: var(--gold); letter-spacing: 0.7px; font-weight: 900; text-transform: uppercase;">Personalización de Marca y Estilo</h4>
+                                    <p style="font-size: 0.65rem; color: #888; margin: 3px 0 0 0;">Configura la identidad visual, colores, textos y dimensiones de la ruleta en un solo lugar.</p>
+                                </div>
+                            </div>
+
+                            <!-- BLOQUE 1: CONFIGURACIÓN DE TEXTOS Y TÍTULOS -->
+                            <div style="margin-bottom: 25px;">
+                                <h5 style="margin: 0 0 15px 0; font-size: 0.7rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 900; border-left: 2px solid var(--gold); padding-left: 8px;">Textos y Cabecera</h5>
+                                
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div class="toggle-container">
+                                        <span style="font-size: 0.7rem; color: #fff; font-weight: 800; text-transform: uppercase;">AJUSTE AUTOMÁTICO DE ANCHO</span>
+                                        <input type="checkbox" id="chkAutoFit" style="width:20px; height:20px;">
+                                    </div>
+                                    
+                                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                                        <label style="font-size: 0.65rem; color: var(--gold); font-weight: 800;">TEXTO DEL TÍTULO</label>
+                                        <input type="text" id="inputEditTitle" class="input-pin" style="padding: 12px; font-size: 0.9rem;" placeholder="Escribe el título aquí...">
+                                    </div>
+
+                                    <div style="display: flex; flex-direction: column; gap: 5px;">
+                                        <label style="font-size: 0.65rem; color: var(--gold); font-weight: 800;">TEXTO DEL SUBTÍTULO</label>
+                                        <input type="text" id="inputEditSubtitle" class="input-pin" style="padding: 12px; font-size: 0.9rem;" placeholder="Escribe el subtítulo aquí...">
+                                    </div>
+
+                                    <div id="fontSizeContainer" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                                            <label style="font-size: 0.65rem; color: var(--gold); font-weight: 800;">TAMAÑO TÍTULO (PX)</label>
+                                            <input type="number" id="inputFontSize" class="input-pin" style="padding: 12px; font-size: 0.9rem;" min="10" max="250" value="32">
+                                        </div>
+                                        <div style="display: flex; flex-direction: column; gap: 5px;">
+                                            <label style="font-size: 0.65rem; color: var(--gold); font-weight: 800;">TAMAÑO SUBT. (PX)</label>
+                                            <input type="number" id="inputSubtitleFontSize" class="input-pin" style="padding: 12px; font-size: 0.9rem;" min="8" max="100" value="12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- BLOQUE 2: IDENTIDAD VISUAL Y TEMAS -->
+                            <div style="margin-bottom: 25px; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
+                                <h5 style="margin: 0 0 15px 0; font-size: 0.7rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 900; border-left: 2px solid var(--gold); padding-left: 8px;">Diseño Visual y Paleta</h5>
+                                
+                                <div class="input-group" style="margin-bottom: 15px;">
+                                    <label style="font-size: 0.65rem; color: var(--gold); font-weight: 800;">SELECCIONAR PLANTILLA O TEMA PERSONALIZADO</label>
+                                    <select id="themeSelector" class="input-pin">
+                                        <!-- Poblado dinámicamente -->
+                                    </select>
+                                </div>
+
+                                <!-- Panel de Personalización de Colores Dinámico -->
+                                <div id="themeCustomPanel" style="display:none;">
+                                    <h5 style="margin-top:20px; margin-bottom:12px; font-size:0.6rem; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:2px; font-weight:900;">Personalización de Colores</h5>
+                                    
+                                    <div class="custom-row" style="margin-bottom: 10px;">
+                                        <span class="custom-label" style="font-size: 0.7rem; color: #fff;">Color Primario</span>
+                                        <input type="color" id="themePrimaryColor" style="width:30px; height:30px; border:none; background:none; cursor:pointer;">
+                                    </div>
+
+                                    <div class="custom-row" style="margin-bottom: 15px;">
+                                        <span class="custom-label" style="font-size: 0.7rem; color: #fff;">Color Secundario</span>
+                                        <input type="color" id="themeSecondaryColor" style="width:30px; height:30px; border:none; background:none; cursor:pointer;">
+                                    </div>
+
+                                    <!-- Nuevas Opciones de Imagen en Temas -->
+                                    <h5 style="margin-top:20px; margin-bottom:12px; font-size:0.6rem; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:2px; font-weight:900;">Activos Visuales del Tema</h5>
+                                    
+                                    <div class="custom-row" style="margin-bottom: 10px;">
+                                        <span class="custom-label" style="font-size: 0.7rem; color: #fff;">Logo Central</span>
+                                        <div class="custom-controls">
+                                            <div id="miniLogoTabPreview" class="mini-preview"></div>
+                                            <button id="btnThemeTabChangeLogo" class="btn btn-secondary" style="padding:8px; font-size:0.55rem;">CAMBIAR</button>
+                                            <button id="btnThemeTabRemoveLogo" class="btn btn-danger" style="padding:8px; font-size:0.55rem;">X</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="custom-row" style="margin-bottom: 15px;">
+                                        <span class="custom-label" style="font-size: 0.7rem; color: #fff;">Imagen Fondo</span>
+                                        <div class="custom-controls">
+                                            <div id="miniBgTabPreview" class="mini-preview"></div>
+                                            <button id="btnThemeTabChangeBg" class="btn btn-secondary" style="padding:8px; font-size:0.55rem;">CAMBIAR</button>
+                                            <button id="btnThemeTabRemoveBg" class="btn btn-danger" style="padding:8px; font-size:0.55rem;">X</button>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Inputs ocultos para carga de archivos de tema -->
+                                    <input type="file" id="inputThemeLogo" accept="image/*" style="display:none;">
+                                    <input type="file" id="inputThemeBg" accept="image/*" style="display:none;">
+                                </div>
+                            </div>
+
+                            <!-- BOTÓN DE APLICAR CAMBIOS UNIFICADO DENTRO DE LA SECCIÓN -->
+                            <div style="border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px; text-align: center;">
+                                <button id="btnApplyCustomizations" class="btn" style="width: 100%; padding: 15px; font-size: 0.85rem; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #fff; box-shadow: 0 0 20px rgba(16, 185, 129, 0.4); border: none; border-radius: 12px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: flex; align-items: center; justify-content: center; gap: 10px;">
+                                    <span>💾</span> APLICAR CAMBIOS DE PERSONALIZACIÓN
+                                </button>
+                                <p id="applyChangesFeedback" style="font-size: 0.65rem; color: #888; margin-top: 10px; line-height: 1.4; transition: all 0.3s ease;">
+                                    Haz clic aquí para aplicar y guardar permanentemente todos los cambios de diseño, colores, títulos y tipografía de la ruleta.
+                                </p>
+                            </div>
+
+                        </div> <!-- Closes SECCIÓN UNIFICADA -->
+
+                        <!-- PIZARRÓN Y LIENZO MODULAR CONTROLS -->
+                        <nexo-board-controls></nexo-board-controls>
+
+                        <!-- CARD 3: GESTIÓN DE DATOS (WORKSPACE) -->
+                        <div class="config-section" style="border: 1px solid rgba(212,175,55,0.15); background: rgba(0,0,0,0.4); border-radius: 20px; padding: 22px; margin-bottom: 25px; backdrop-filter: blur(5px);">
+                            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                                <span style="font-size: 1.2rem;">💾</span>
+                                <h4 style="margin: 0; font-size: 1rem; color: var(--gold); letter-spacing: 0.5px;">Gestión de Datos (Workspace)</h4>
+                            </div>
+                            <p style="font-size: 0.7rem; color: #888; margin-bottom: 15px;">Realiza copias de seguridad portátiles o importa un entorno de trabajo completo con imágenes y bases de datos.</p>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                                <button id="btnExportWorkspace" class="btn btn-secondary" style="font-size: 0.6rem; color: var(--gold); border-color: var(--gold); padding: 12px;">EXPORTAR .NEXO</button>
+                                <button id="btnImportWorkspaceTrigger" class="btn btn-primary" style="font-size: 0.6rem; padding: 12px;">IMPORTAR .NEXO</button>
+                                <input type="file" id="inputImportWorkspace" accept=".nexo" style="display:none;">
+                            </div>
+                            <p style="font-size: 0.55rem; color: #555; margin-top: 10px; text-align: center; line-height: 1.3;">El archivo comprimido encriptado .NEXO consolida la totalidad de configuraciones, activos gráficos y leads registrados.</p>
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane-watermark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                    </div>
+                </div>
+
+                <!-- Pestaña Sistema (Optimización y Registro de Auditoría) -->
+                <div id="tab-sistema" class="tab-pane">
+                    <!-- Cabecera de Diagnóstico -->
+                    <div class="config-section" style="border: 1px solid rgba(212,175,55,0.15); background: rgba(0,0,0,0.4); border-radius: 20px; padding: 22px; margin-bottom: 25px; backdrop-filter: blur(5px);">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                            <span style="font-size: 1.5rem;">🛠️</span>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1.2rem; color: var(--gold); letter-spacing: 0.5px; font-weight: 900; text-transform: uppercase;">Módulo de Control de Sistema</h3>
+                                <p style="font-size: 0.7rem; color: #888; margin: 4px 0 0 0;">Supervisa el rendimiento del navegador, la telemetría, el consumo de memoria local y consulta el log de seguridad y auditoría.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="sistema-modules-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; align-items: start; margin-bottom: 25px;">
+                        <!-- Se carga de forma 100% modular y dinámica por SistemaController -->
+                    </div>
+                    <div class="tab-pane-watermark">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div style="padding: 20px; background: #000; border-top: 1px solid #222; display: flex; flex-direction: column; gap: 10px;">
+                <button id="btnCloseConfig" class="btn btn-secondary" style="width:100%; font-size: 0.7rem;">CERRAR PANEL</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Modal Anuncio de Bienvenida (Impacto) -->
+    <div id="modalAdHome" class="modal">
+        <div class="modal-content" style="max-width: 600px; position:relative; background:#000; border:1px solid #222;">
+            <button id="btnCloseAdHome" style="position:absolute; top:15px; right:15px; background:rgba(0,0,0,0.8); border:1px solid #333; color:white; width:44px; height:44px; border-radius:50%; cursor:pointer; z-index:100; font-weight:900; display:flex; align-items:center; justify-content:center;">X</button>
+            <div id="adHomeContainer" style="padding:40px; text-align:center; overflow-y:auto; max-height:80vh;">
+                <!-- Contenido dinámico inyectado por JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Previsualización de Banners -->
+    <div id="modalBannerPreview" class="modal">
+        <div class="modal-content" style="padding: 40px; border: 1px solid var(--gold); max-width: 500px;">
+            <h3 style="color: var(--gold); margin-top: 0; text-transform: uppercase; letter-spacing: 2px;">VISTA PREVIA BANNERS</h3>
+            <p style="color: #666; font-size: 0.75rem; margin-bottom: 25px;">Así se verá la franja publicitaria.</p>
+            <div id="bannerPreviewDisplay" style="width: 100%; height: 80px; background: #000; border: 1px solid #333; border-radius: 15px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
+                <div id="bannerPreviewMediaContainer" style="width:100%; height:100%; display:flex; align-items:center; justify-content:center;">
+                    <!-- Se inyecta img o video -->
+                </div>
+            </div>
+
+            <div style="margin-top:20px; display:flex; flex-direction:column; gap:8px;">
+                <div class="toggle-container" style="background:#0a0a0a; border-color:#333; padding: 12px 15px; margin-bottom: 0;">
+                    <span style="font-size: 0.6rem; color: #fff; font-weight: 800; text-transform: uppercase;">MUTEAR AUDIO (VIDEO)</span>
+                    <input type="checkbox" id="chkAdBannersPreviewVideoMute" style="width:18px; height:18px;">
+                </div>
+                <div class="toggle-container" style="background:#0a0a0a; border-color:#333; padding: 12px 15px; margin-bottom: 0;">
+                    <span style="font-size: 0.6rem; color: #fff; font-weight: 800; text-transform: uppercase;">REPETICIÓN (LOOP)</span>
+                    <input type="checkbox" id="chkAdBannersPreviewVideoLoop" style="width:18px; height:18px;">
+                </div>
+            </div>
+            <button id="btnCloseBannerPreview" class="btn btn-primary" style="width: 100%; margin-top: 25px;">CERRAR VISTA PREVIA</button>
+        </div>
+    </div>
+
+    <!-- Otros Modales -->
+    <div id="modalEditFormFields" class="modal">
+        <div class="modal-content" style="padding: 30px;">
+            <h3 style="color:var(--gold); margin-top:0; text-transform: uppercase;">CONFIGURACIÓN DE FORMULARIO</h3>
+            <p style="font-size: 0.75rem; color: #777; margin-bottom: 15px; text-align: center;">Personaliza los datos que solicitas en el registro.</p>
+            <div id="formFieldsEditor" style="max-height: 40vh; overflow-y: auto;"></div>
+            <button id="btnAddField" class="btn btn-secondary" style="width: 100%; border-style: dashed; font-size: 0.65rem; margin-top: 15px;">+ AGREGAR NUEVO CAMPO</button>
+            <button id="btnFormEditorPreview" class="btn btn-secondary" style="width: 100%; border-color: var(--gold); color: var(--gold); font-size: 0.65rem; margin-top: 10px;">👁️ VISTA PREVIA DEL FORMULARIO</button>
+            <button id="btnCloseFormEditor" class="btn btn-primary" style="width:100%; margin-top:20px;">CERRAR Y GUARDAR</button>
+            <button id="btnCancelFormEditor" class="btn" style="width:100%; color:#555; margin-top:10px;">CERRAR</button>
+        </div>
+    </div>
+
+
+
+    <div id="modalWinner" class="modal">
+        <div class="modal-content" id="winnerModalContent" style="border: 2px solid rgba(212, 175, 55, 0.35); background: linear-gradient(135deg, #0d0d0e 0%, #050506 100%); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212,175,55,0.1); padding: 35px 25px; border-radius: 24px; text-align: center; max-width: 480px; width: 92%; position: relative; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);">
+            <nexo-congrats-card id="congratsCard"></nexo-congrats-card>
+        </div>
+    </div>
+
+    <!-- Modal para Editar el 100% de un Juego Local -->
+    <div id="modalEditLocalGame" class="modal">
+        <div class="modal-content" style="padding: 25px; max-width: 650px; width: 95%; max-height: 85vh; overflow-y: auto; background: #000; border: 2px solid var(--gold); border-radius: 20px;">
+            <h3 style="color:var(--gold); margin-top:0; text-transform: uppercase; letter-spacing: 1px; font-size: 1.1rem; margin-bottom: 15px; text-align: center;">⚙️ EDITAR CONFIGURACIÓN DEL JUEGO</h3>
+            
+            <!-- Identidad -->
+            <div style="margin-bottom: 15px;">
+                <label class="custom-label" style="font-size: 0.65rem; color: #aaa; margin-bottom: 4px; display: block; font-weight: 800; text-transform: uppercase;">Nombre del Juego</label>
+                <input type="text" id="editLocalGameName" class="input-standard" style="width: 100%; font-size: 0.85rem;" placeholder="Ej: Ruleta Corporativa">
+            </div>
+
+            <div style="margin-bottom: 15px;">
+                <label class="custom-label" style="font-size: 0.65rem; color: #aaa; margin-bottom: 4px; display: block; font-weight: 800; text-transform: uppercase;">Modo de Juego</label>
+                <select id="editLocalGameMode" class="input-standard" style="width: 100%; font-size: 0.85rem; height: 44px; background: #090909; border: 1px solid #222; color: #fff;">
+                    <option value="wheel">🎡 MODO RULETA (Premios como opciones)</option>
+                    <option value="raffle">🎟️ MODO SORTEO (Participantes registrados)</option>
+                </select>
+            </div>
+
+            <!-- Ajustes (Toggles) -->
+            <p style="color: var(--gold); font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-top: 20px; margin-bottom: 10px; border-bottom: 1px solid #1a1a1a; padding-bottom: 5px;">Ajustes de Participación</p>
+            
+            <div style="background: rgba(255,255,255,0.01); border: 1px solid #1a1a1a; border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 10px; margin-bottom: 15px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="display: flex; flex-direction: column; text-align: left;">
+                        <span style="font-size: 0.7rem; color: #fff; font-weight: 800; text-transform: uppercase;">📋 Solicitar Registro</span>
+                        <span style="font-size: 0.55rem; color: #666;">Los usuarios deben registrarse antes de poder girar.</span>
+                    </div>
+                    <input type="checkbox" id="editLocalGameRequireRegister" style="width:18px; height:18px;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #151515; padding-top: 10px;">
+                    <div style="display: flex; flex-direction: column; text-align: left;">
+                        <span style="font-size: 0.7rem; color: #fff; font-weight: 800; text-transform: uppercase;">🎁 Auto-eliminar Ganador</span>
+                        <span style="font-size: 0.55rem; color: #666;">El premio o participante ganador se elimina tras el giro.</span>
+                    </div>
+                    <input type="checkbox" id="editLocalGameRemoveWinner" style="width:18px; height:18px;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px dashed #151515; padding-top: 10px;">
+                    <div style="display: flex; flex-direction: column; text-align: left;">
+                        <span style="font-size: 0.7rem; color: #fff; font-weight: 800; text-transform: uppercase;">📊 Reportes por juego</span>
+                        <span style="font-size: 0.55rem; color: #666;">Filtra reportes locales exclusivamente para esta sesión de juego.</span>
+                    </div>
+                    <input type="checkbox" id="editLocalGameSessionListEnabled" style="width:18px; height:18px;">
+                </div>
+            </div>
+
+            <!-- Secciones de Editor Físico -->
+            <div class="flex-row-responsive" style="gap: 15px; margin-top: 20px;">
+                <!-- Premios/Opciones -->
+                <div style="flex: 1; min-width: 260px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1a1a1a; padding-bottom: 5px; margin-bottom: 10px;">
+                        <span style="color: var(--gold); font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;">🎁 Premios / Opciones</span>
+                        <button id="btnEditLocalGameAddPrize" class="btn btn-secondary" style="font-size: 0.55rem; padding: 4px 10px; min-height: unset; width: auto; margin: 0;">+ AGREGAR</button>
+                    </div>
+                    <div id="editLocalGamePrizesContainer" style="max-height: 200px; overflow-y: auto; background: #050505; border: 1px solid #111; padding: 8px; border-radius: 8px; display: flex; flex-direction: column; gap: 6px;">
+                        <!-- Inyectados dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- Formulario de Registro -->
+                <div style="flex: 1; min-width: 260px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1a1a1a; padding-bottom: 5px; margin-bottom: 10px;">
+                        <span style="color: var(--gold); font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;">📋 Campos del Registro</span>
+                        <button id="btnEditLocalGameAddField" class="btn btn-secondary" style="font-size: 0.55rem; padding: 4px 10px; min-height: unset; width: auto; margin: 0;">+ AGREGAR</button>
+                    </div>
+                    <div id="editLocalGameFieldsContainer" style="max-height: 200px; overflow-y: auto; background: #050505; border: 1px solid #111; padding: 8px; border-radius: 8px; display: flex; flex-direction: column; gap: 6px;">
+                        <!-- Inyectados dinámicamente -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Acciones -->
+            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 25px; border-top: 1px solid #1a1a1a; padding-top: 15px;">
+                <button id="btnSaveLocalGameEdit" class="btn btn-primary" style="width: 100%; font-size: 0.85rem; padding: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px;">💾 GUARDAR JUEGO (100%)</button>
+                <button id="btnCloseLocalGameEdit" class="btn" style="width: 100%; color: #666; font-size: 0.75rem; font-weight: 900; text-transform: uppercase; padding: 8px; margin: 0;">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalAdd" class="modal">
+        <div class="modal-content" style="padding: 25px; display: flex !important; flex-direction: column;">
+            <h3 id="prizeLibraryHeader" style="color:var(--gold); margin-top:0; text-transform: uppercase; letter-spacing: 1.5px; font-size: 1.1rem; margin-bottom: 15px;">BIBLIOTECA DE PREMIOS</h3>
+            <div id="prizeEditorGameName" style="font-size: 0.75rem; color: #888; margin-top: -10px; margin-bottom: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;"></div>
+            
+            <!-- Sección de Guardar/Cargar Listas -->
+            <div style="background: #0a0a0a; padding: 20px; border-radius: 25px; border: 1px solid #222; margin-bottom: 25px; text-align: left; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+                <p style="color: var(--gold); font-size: 0.65rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; border-bottom: 1px solid #1a1a1a; padding-bottom: 8px;">Guardar Lista Actual</p>
+                
+                <div class="flex-row-responsive" style="margin-bottom: 15px; gap: 12px;">
+                    <input type="text" id="inputSaveListName" class="input-standard" placeholder="Nombre de la lista..." style="flex: 1;">
+                    <button id="btnSaveCurrentList" class="btn btn-secondary" style="padding: 14px 20px; font-size: 0.7rem; font-weight: 900; white-space: nowrap; min-height: 48px;">GUARDAR</button>
+                </div>
+
+                <p style="color: #444; font-size: 0.6rem; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px;">Listas Disponibles</p>
+                <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 5px;">
+                    <select id="selectSavedLists" class="input-standard" style="flex: 1; font-size: 0.75rem; font-weight: 700; height: 48px;"></select>
+                    <button id="btnLoadSelectedList" class="btn btn-secondary" style="padding: 0 15px; height: 48px; font-size: 0.65rem; font-weight: 900;">CARGAR</button>
+                    <button id="btnDeleteSelectedList" class="btn btn-danger" style="width: 48px; height: 48px; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;">×</button>
+                </div>
+            </div>
+
+            <div class="flex-row-responsive" style="margin-bottom:25px; justify-content:center; gap: 15px;">
+                <div style="display: flex; align-items: center; gap: 12px; justify-content: center;">
+                    <span style="font-size:0.75rem; color:var(--gold); font-weight:900; text-transform: uppercase; letter-spacing: 1px;">CANTIDAD:</span>
+                    <input type="number" id="prizeQuantity" min="1" max="100" value="2" class="input-standard" style="width:80px; text-align:center; font-weight: 900; font-size: 1rem;">
+                </div>
+                <button id="btnGenerateInputs" class="btn btn-secondary" style="padding:14px 20px; font-size:0.7rem; font-weight: 900; letter-spacing: 1px;">GENERAR EDITOR</button>
+                <button id="btnAddOption" class="btn btn-gold" style="padding:14px 20px; font-size:0.7rem; font-weight: 900; letter-spacing: 1px;">+ AGREGAR OPCIÓN</button>
+            </div>
+            
+            <div id="inputsContainer" style="max-height: 300px; overflow-y: auto; background: #000; padding: 15px; border-radius: 20px; border: 1px solid #111;"></div>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 25px;">
+                <button id="btnSaveList" class="btn btn-primary" style="width:100%; font-size: 0.9rem; padding: 22px; letter-spacing: 2px;">APLICAR CAMBIOS</button>
+                <button id="btnCloseAdd" class="btn" style="color:#666; font-size: 0.75rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; padding: 15px;">CANCELAR</button>
+            </div>
+        </div>
+    </div>
+
+    <canvas id="confettiCanvas" style="position:fixed; inset:0; pointer-events:none; z-index:99999"></canvas>
+
+    <script type="module" src="index.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').then(reg => {
+            console.log('RULETA NEXO PREMIUM PWA: Service Worker Registrado');
+          }).catch(err => {
+            console.log('RULETA NEXO PREMIUM PWA: Error al registrar SW', err);
+          });
+        });
+      }
+    </script>
+</body>
+</html>
